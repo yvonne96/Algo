@@ -255,4 +255,4 @@ A timeline of our plan for the next two months. This shows deadlines we have set
 
 ### Gantt chart 
 ![Gantt chart image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/gantt_chart.png)
+(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/gantt_chart.png)
