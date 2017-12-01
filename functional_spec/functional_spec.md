@@ -15,6 +15,8 @@
 *3.2 Current Session Window*	
 *3.3 History Window*	
 *3.4 Input Window*	
+*3.5 View Code Window*
+*3.6 Web-Interface*
 **4.System Architecture**	
 **5.High Level Design**	
 **6.Preliminary Schedule**	
@@ -88,6 +90,9 @@ Any user can enter their own data to be used by the algorithm. Once the user cli
 
 #### Current session for diagram
 When the user implements the diagram basic information about the current example for the diagram will be given in this window, such as the data given,goal,result etc. This is to increase our user’s understanding of the algorithm. 
+
+#### View Code for diagram
+The user has the option to the view code for the algorithm while it’s being implemented by the diagram. This will allow the user to follow exactly what the algorithm is doing at each stage. They will be able to do this by clicking on a button at the very bottom of the diagram.
 
 #### History of implementing algorithme problem
 When a user implements an algorithm we will save it in our database and display it in our history window. If the user wishes to reply that instance of the algorithm, they have the option to do so. We will only display records for that particular algorithm, not any of the other algorithms they may have implemented.
@@ -166,8 +171,21 @@ For example if the user uses nothing as an input.
 #### Dependencies with other requirements
 This window works in tandem with the visual diagram. When the user inputs data it triggers the visual diagram.
 
+### 3.5 View Code Window
 
-### 3.5 Web-Interface
+#### Description
+This will be displayed on the demonstration page along with the visual diagram. The user will be able to enable this feature by clicking on the button at the bottom of the diagram
+
+#### Criticality
+This window is important for the user’s understandability of what the diagram is doing.
+
+#### Technical issues
+We will be using colour to highlight each line as it's being processed. This might take some time.
+
+#### Dependencies with other requirements
+This window works in tandem with the visual diagram.
+
+### 3.6 Web-Interface
 
 #### Description
 Our website must be user friendly so it will be easy for our users to navigate through each web page. Our users should always be able to quickly find where abouts they are within the website. We will design it with our user requirements in mind.
