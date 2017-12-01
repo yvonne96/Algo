@@ -201,7 +201,7 @@ Everything hinges on our web interface. If our users are frustrated with our web
 
 ## 4.System Architecture
 ![System Architecture image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/systemarchitecture.png)
+(images/systemarchitecture.png)
 
 ## 5.High Level Design
 
@@ -236,19 +236,19 @@ This is where the user can see the basic facts about the current example being r
 
 ### Context Diagram
 ![Context Diagram image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/context.png)
+(images/context.png)
 
 ### LDS Diagram
 ![LDS Diagram image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/lds.png)
+(images/lds.png)
 
 ### DFD Diagram
 ![DFD Diagram image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/dfd.png)
+(images/dfd.png)
 
 ### System Design
 ![System Design image]
-(https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo/blob/master/functional_spec/images/system_design.png)
+(images/system_design.png)
 
 ## 6.Preliminary Schedule
 A timeline of our plan for the next two months. This shows deadlines we have set for ourselves throughout the project to help keep ourselves on track so we don’t fall behind. We’re aiming to finish up a week before the project is due to leave us room for any issues we run into along the way. 
