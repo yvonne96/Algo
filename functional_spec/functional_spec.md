@@ -1,11 +1,11 @@
 # Algo
 
 **1.Introduction** 
- *1.1 Overview*	
+*1.1 Overview*	
 *1.2 Business Context*	
 *1.3 Glossary*
 **2. General Description**	
- *2.1 Product / System Functions*	
+*2.1 Product / System Functions*	
 *2.2 User Characteristics and Objectives*	
 *2.3 Operational Scenarios*	
 *2.4 Constraints*	
