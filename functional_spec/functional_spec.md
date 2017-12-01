@@ -2,7 +2,7 @@
 
 **1.Introduction** 
 1.1 Overview	
-1.2 Business Context	
+1.2 Business Context
 1.3 Glossary
 **2. General Description**	
 2.1 Product/System Functions*	
