@@ -1,22 +1,22 @@
 # Algo
 
 **1.Introduction** 
-*1.1 Overview*	
-*1.2 Business Context*	
-*1.3 Glossary*
+1.1 Overview	
+1.2 Business Context	
+1.3 Glossary
 **2. General Description**	
-*2.1 Product/System Functions*	
-*2.2 User Characteristics and Objectives*	
-*2.3 Operational Scenarios*	
-*2.4 Constraints*	
+2.1 Product/System Functions*	
+2.2 User Characteristics and Objectives*	
+2.3 Operational Scenarios*	
+2.4 Constraints*	
 **3.Functional Requirements**	
-*3.1 Visual Diagram*	
-*3.2 Current Session Window*	
-*3.2 Current Session Window*	
-*3.3 History Window*	
-*3.4 Input Window*	
-*3.5 View Code Window*
-*3.6 Web-Interface*
+3.1 Visual Diagram
+3.2 Current Session Window	
+3.2 Current Session Window	
+3.3 History Window	
+3.4 Input Window	
+3.5 View Code Window
+3.6 Web-Interface
 **4.System Architecture**	
 **5.High Level Design**	
 **6.Preliminary Schedule**	
