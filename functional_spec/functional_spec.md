@@ -255,4 +255,4 @@ A timeline of our plan for the next two months. This shows deadlines we have set
 
 ### Gantt chart 
 ![Gantt chart image]
-(gantt_chart.png)
+(images/gantt_chart.png)
