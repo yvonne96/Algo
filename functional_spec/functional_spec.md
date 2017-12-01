@@ -1,6 +1,6 @@
 # Algo
 
-**1.Introduction** 
+**1.Introduction**  
 *1.1 Overview*  	
 *1.2 Business Context*  
 *1.3 Glossary*  
@@ -18,7 +18,7 @@
 *3.5 View Code Window*  
 *3.6 Web-Interface*  
 **4.System Architecture**	
-**5.High Level Design**	
+**5.High Level Design**  
 **6.Preliminary Schedule**	
 
 
