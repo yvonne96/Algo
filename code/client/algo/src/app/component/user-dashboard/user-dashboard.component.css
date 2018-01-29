@@ -1,0 +1,15 @@
+.navbar-header {
+  margin-right: 30px;
+}
+
+.content {
+  margin-top: 55px;
+}
+
+.separator {
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  background: white;
+  height: 1px;
+}
