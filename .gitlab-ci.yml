@@ -1,0 +1,7 @@
+before_script:
+  - apt update
+  - pip install -r requirements.txt
+
+test:
+  script:
+    - python3 -m unittest discover -v
