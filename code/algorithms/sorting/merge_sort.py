@@ -1,9 +1,9 @@
-def mergeSort(l):
-	if len(l) == 1:
+def merge_sort(l):
+	if len(l) <= 1:
 		return l
 	mid = len(l) // 2
-	l1 = mergeSort(l[:mid])
-	l2 = mergeSort(l[mid:])
+	l1 = merge_sort(l[:mid])
+	l2 = merge_sort(l[mid:])
 	new = []
 	i, j = 0, 0
 	while i < len(l1) and j < len(l2):

@@ -1,4 +1,4 @@
-def insertionSort(l):
+def insertion_sort(l):
 	for i in range(len(l)):
 		tmp = l[i]
 		curr = i - 1

@@ -1,4 +1,4 @@
-def bubbleSort(l):
+def bubble_sort(l):
 	swapped = True
 	while swapped:
 		swapped = False
