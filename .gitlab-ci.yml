@@ -2,7 +2,7 @@ image: python
 
 before_script:
   - apt update
-  - pip install -r requirements.txt
+  - pip3 install -r requirements.txt
 
 test:
   script:
