@@ -1,7 +1,7 @@
 import unittest, sys
 from code.algorithms.sorting.selection_sort import selection_sort
 
-class TestMergeSort(unittest.TestCase):
+class TestSelectionSort(unittest.TestCase):
 
 	def test_empty_array(self):
 		self.assertEqual(selection_sort([]), [])

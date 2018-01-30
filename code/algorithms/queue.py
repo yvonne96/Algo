@@ -10,7 +10,7 @@ class Queue():
 
 	def dequeue(self):
 		if self.items:
-			return self.items.pop(0)
+			return self.items.pop()
 
 	def __str__(self):
 		return " ".join([str(x) for x in self.items])

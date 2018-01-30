@@ -1,7 +1,7 @@
 import unittest, sys
 from code.algorithms.sorting.bubble_sort import bubble_sort
 
-class TestMergeSort(unittest.TestCase):
+class TestBubbleSort(unittest.TestCase):
 
 	def test_empty_array(self):
 		self.assertEqual(bubble_sort([]), [])
