@@ -8,13 +8,18 @@ import {APP_BASE_HREF} from '@angular/common';
 import {APP_CONFIG, ALGO_CONFIG} from './app-config';
 import {AppComponent}  from './app.component';
 import {ErrorComponent} from './component/error/error.component';
-import {UserDashboardComponent} from './component/user-dashboard/user-dashboard.components';
+import {UserDashboardComponent} from './component/user-dashboard/user-dashboard.component';
+import {ItemComponent} from './component/item/item.component';
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: UserDashboardComponent,
-    children: []
+    children: [
+      { path: '',
+        component: ItemComponent
+      }
+    ]
   },
   {path: 'algo', redirectTo: '/dashboard', pathMatch: 'prefix'},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -31,7 +36,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ErrorComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ItemComponent
   ],
   bootstrap: [
     AppComponent
