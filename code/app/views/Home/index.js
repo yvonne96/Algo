@@ -13,7 +13,16 @@ class Home extends Component {
 
     render() {
         return (
-            <div className = 'Home' />
+            <div className = 'Home'>
+                <div className="content">
+                    <div className="separator"></div>
+                        <div className='contain'>
+                        <div className='col-md-4 col-md-offset-12 jumbotron'>
+                            <h1>Welcome</h1>
+                        </div>
+                        </div>
+                </div>
+            </div>
         );
     }
 }

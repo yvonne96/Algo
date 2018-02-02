@@ -29,7 +29,7 @@ class Master extends Component {
 
     render() {
         return (
-            <DocumentTitle title = 'Site Title'>
+            <DocumentTitle title = 'Algo'>
                 <div className='Master'>
                     <Header />
                     <Switch>
