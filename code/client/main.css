@@ -1,13 +1,35 @@
 .brand-logo > h2 {
-  margin: 4px;
+    margin: 4px;
 }
-/*body {*/
-    /*background-color: lightgray;*/
-/*}*/
 
 body {
     background-color: lightgray;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li Link:hover:not(.active) {
+    background-color: #111;
+}
+
 
 .content {
     /*margin: top,right,bottom,left*/

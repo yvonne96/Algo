@@ -2,11 +2,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import {
+    Link,
     withRouter
 } from 'react-router-dom';
-
-import AppBar from 'material-ui/AppBar';
 
 const mapStateToProps = connect(state => {
     return state;
@@ -16,37 +16,32 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
-        this.moveTo = this.moveTo.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+        dropdownOpen: false
+    };
     }
 
-    moveTo(location) {
-        console.log(location);
 
-        this.props.history.push(
-            `${this.props.location.pathname}#${location}`
-        );
-
-        this.forceUpdate();
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
     }
 
     render() {
-        const menuAction = this.props.toggleOpen === 'function'
-            ? this.props.toggleOpen
-            : () => {};
 
         return (
             <div className='Header'>
-                <AppBar
-                    onLeftIconButtonTouchTap = {menuAction}
-                    onTitleTouchTap = {() => {
-                        this.props.history.push('/');
-                    }}
-                    showMenuIconButton = {true}
-                    title = 'Algo'
-                    titleStyle = {{
-                        cursor: 'pointer'
-                    }}
-                />
+                <nav>
+                    <ul>
+                        <li><Link to='/'>Algo</Link></li>
+                        <li><Link to='/bubble'>Sorting</Link></li>
+                        <li><Link to='/binarySearchTree'>Trees</Link></li>
+                        <li><Link to='/bfs'>Graph</Link></li>
+                        <li><Link to='/something'>Data Structures</Link></li>
+                    </ul>
+                </nav>
             </div>
         );
     }

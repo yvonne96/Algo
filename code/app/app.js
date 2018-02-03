@@ -5,7 +5,6 @@ import {Provider} from 'react-redux';
 import {
     BrowserRouter
 } from 'react-router-dom';
-
 import store from './store';
 // import * as colors from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';

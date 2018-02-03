@@ -13,6 +13,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 import Home from './../views/Home/index';
+import BubbleSortHome  from './../views/Sorting/bubblesort-home'
 
 class Master extends Component {
     constructor(props) {
@@ -33,9 +34,8 @@ class Master extends Component {
                 <div className='Master'>
                     <Header />
                     <Switch>
-                        <Route exact = {true} path = '/'>
-                            <Home/>
-                        </Route>
+                        <Route exact path = '/' component={Home}/>
+                        <Route exact path = '/bubble' component={BubbleSortHome}/>
                         <Route component={NoMatch}/>
                     </Switch>
                     <Footer />
