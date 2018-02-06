@@ -8,7 +8,9 @@ module.exports = {
   devServer: {
     env: process.env.NODE_ENV,
     hot: true,
-    quiet: true
+    quiet: true,
+    historyApiFallback: true,
+    contentBase: './'
   },
   entry: {
     client: [
