@@ -32,7 +32,10 @@ class Master extends Component {
     render() {
         return (
             <DocumentTitle title = 'Algo'>
+                <div className='container-fluid'>
+                <div className='background'>
                 <div className='Master'>
+
                     <Header />
                     <Switch>
                         <Route exact path = '/' component={Home}/>
@@ -41,6 +44,8 @@ class Master extends Component {
                         <Route component={NoMatch}/>
                     </Switch>
                     <Footer />
+                    </div>
+                </div>
                 </div>
             </DocumentTitle>
         );

@@ -16,8 +16,7 @@ class Home extends Component {
             <div className = 'Home'>
                 <div className="content">
                     <div className="separator"></div>
-                        <div className='contain'>
-                        <div className='jumbotron'>
+                        <div className='container'>
                             <h1>About</h1>
                             <p>Our aim is to help you understand algorithms and how they work.</p>
                             <p>We have interactive demos of some algorithms such as:</p>
@@ -26,7 +25,6 @@ class Home extends Component {
                                 <li>Bubble Sort</li>
                                 <li>Dijkstra's Algorithm etc.</li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -4,5 +4,11 @@
     "path": "/",
     "render": "index",
     "title": "Title"
+  },
+  "bubble": {
+    "method": "GET",
+    "path": "/bubble",
+    "render": "bubblesort-home",
+    "title": "Title"
   }
 }

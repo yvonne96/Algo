@@ -22,7 +22,7 @@ class Header extends Component {
 
         return (
             <div className='Header'>
-                <Navbar inverse>
+                <Navbar inverse collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="#home">Algo</a>
