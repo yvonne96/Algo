@@ -17,7 +17,7 @@ class Home extends Component {
                 <div className="content">
                     <div className="separator"></div>
                         <div className='contain'>
-                        <div className='col-md-4 col-md-offset-12 jumbotron'>
+                        <div className='jumbotron'>
                             <h1>About</h1>
                             <p>Our aim is to help you understand algorithms and how they work.</p>
                             <p>We have interactive demos of some algorithms such as:</p>
