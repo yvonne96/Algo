@@ -29,9 +29,9 @@ p {
     background: white;
     height: 1px;
 }
-.background {
-    background-color: lightgrey;
+.navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
 }
-/*.Navbar {*/
-    /*width: max-content;*/
-/*}*/

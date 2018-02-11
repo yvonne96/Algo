@@ -33,19 +33,21 @@ class Master extends Component {
         return (
             <DocumentTitle title = 'Algo'>
                 <div className='container-fluid'>
-                <div className='background'>
-                <div className='Master'>
-
-                    <Header />
-                    <Switch>
-                        <Route exact path = '/' component={Home}/>
-                        <Route exact path = '/bubble' component={BubbleSortHome}/>
-                        <Route exact path = '/bubble/bubbleDemo' component={BubbleSortDemo}/>
-                        <Route component={NoMatch}/>
-                    </Switch>
-                    <Footer />
+                    <div className='Master'>
+                        <Header />
+                        <div className="content">
+                            <div className="separator"></div>
+                                <div className='container'>
+                                    <Switch>
+                                        <Route exact path = '/' component={Home}/>
+                                        <Route exact path = '/bubble' component={BubbleSortHome}/>
+                                        <Route exact path = '/bubble/bubbleDemo' component={BubbleSortDemo}/>
+                                        <Route component={NoMatch}/>
+                                    </Switch>
+                                </div>
+                        </div>
                     </div>
-                </div>
+                    <Footer />
                 </div>
             </DocumentTitle>
         );

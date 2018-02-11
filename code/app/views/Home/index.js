@@ -14,19 +14,14 @@ class Home extends Component {
     render() {
         return (
             <div className = 'Home'>
-                <div className="content">
-                    <div className="separator"></div>
-                        <div className='container'>
-                            <h1>About</h1>
-                            <p>Our aim is to help you understand algorithms and how they work.</p>
-                            <p>We have interactive demos of some algorithms such as:</p>
-                            <ul className='list'>
-                                <li>Binary Search Tree</li>
-                                <li>Bubble Sort</li>
-                                <li>Dijkstra's Algorithm etc.</li>
-                            </ul>
-                    </div>
-                </div>
+                <h1>About</h1>
+                <p>Our aim is to help you understand algorithms and how they work.</p>
+                <p>We have interactive demos of some algorithms such as:</p>
+                <ul className='list'>
+                    <li>Binary Search Tree</li>
+                    <li>Bubble Sort</li>
+                    <li>Dijkstra's Algorithm etc.</li>
+                </ul>
             </div>
         );
     }

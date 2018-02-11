@@ -25,12 +25,12 @@ class Header extends Component {
                 <Navbar inverse collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#home">Algo</a>
+                            <a href="/">Algo</a>
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
                         <NavDropdown eventKey={3} title="Sorting" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1} href="/bubble">Bubble Sort</MenuItem>
+                            <MenuItem eventKey={3.1} ><Link to='/bubble'>Bubble Sort</Link></MenuItem>
                         </NavDropdown>
                     </Nav>
                     <Nav>
