@@ -14,7 +14,6 @@ import Footer from './Footer';
 
 import Home from './../views/Home/index';
 import BubbleSortHome  from './../views/Sorting/bubblesort-home'
-import BubbleSortDemo from './../views/Sorting/bubblesort-demo'
 
 class Master extends Component {
     constructor(props) {
@@ -32,21 +31,13 @@ class Master extends Component {
     render() {
         return (
             <DocumentTitle title = 'Algo'>
-                <div className='container-fluid'>
-                    <div className='Master'>
-                        <Header />
-                        <div className="content">
-                            <div className="separator"></div>
-                                <div className='container'>
-                                    <Switch>
-                                        <Route exact path = '/' component={Home}/>
-                                        <Route exact path = '/bubble' component={BubbleSortHome}/>
-                                        <Route exact path = '/bubble/bubbleDemo' component={BubbleSortDemo}/>
-                                        <Route component={NoMatch}/>
-                                    </Switch>
-                                </div>
-                        </div>
-                    </div>
+                <div className='Master'>
+                    <Header />
+                    <Switch>
+                        <Route exact path = '/' component={Home}/>
+                        <Route exact path = '/bubble' component={BubbleSortHome}/>
+                        <Route component={NoMatch}/>
+                    </Switch>
                     <Footer />
                 </div>
             </DocumentTitle>
