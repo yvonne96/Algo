@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+var ReactDOM = require('react-dom')
+//import d3 from 'd3';
+//import ReactFauxDOM from 'react-faux-dom'
 
 const mapStateToProps = connect(state => {
     return (state);
