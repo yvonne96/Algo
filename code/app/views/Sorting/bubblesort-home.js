@@ -130,14 +130,10 @@ class BubbleSortHome extends Component {
                                 it is too slow and impractical for most problems even when
                                 compared to insertion sort.
                                 It can be practical if the input is usually in sorted order but
-                                may occasionally have some out-of-order elements nearly in position.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="content">
-                    <div className="separator"></div>
-                    <div className='contain'>
-                        <div className='col-md-4 jumbotron'>
+                                may occasionally have some out-of-order elements nearly in position.
+                            </p>
+                        </Col>
+                        <Col md={{size:'4',offset:'1'}}>
                             <h1>Quick Facts</h1>
                             <p><b>Class:</b> Sorting Algorithm</p>
                             <p><b>Worst Case Performance:</b>O(n<sup>2</sup>)</p>
