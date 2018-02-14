@@ -1,0 +1,62 @@
+.brand-logo > h2 {
+    margin: 4px;
+}
+
+.list {
+    list-style-type: square;
+}
+body {
+    background-color: lightgrey;
+}
+p {
+    font-size: 20px;
+}
+
+.button {
+    background-color: #595E66;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+input[type=text]{
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.button-center {
+    text-align: center;
+}
+
+
+.content {
+    /*margin: top,right,bottom,left*/
+    margin: 45px 20px 25px 20px;
+    /*text-indent: 20px;*/
+    border-radius: 20px ;
+    box-shadow: 0 0 20px grey;
+    background-color: white;
+}
+.contain {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+.separator {
+    margin: 5px 20px 20px 20px;
+    background: white;
+    height: 1px;
+}
+.navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
