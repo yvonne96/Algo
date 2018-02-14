@@ -5,9 +5,5 @@ module.exports = function(app) {
     res.render('index');
   });
 
-  router.get('/bubble',(req,res)=> {
-    res.render('bubble');
-  });
-
   app.use(router);
 };
