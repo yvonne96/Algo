@@ -105,17 +105,17 @@ class BubbleSortHome extends Component {
                             <div className='content'>
                                 <h1>Animation</h1>
                                 {/*<div className="content button-center">*/}
-                                {/*<div className="separator"></div>*/}
+                                {/*<br/>*/}
                                 {/*<form>*/}
                                 {/*Please enter up to 10 numbers to be sorted:*/}
                                 {/*<input type="text" id="nums" />*/}
                                 {/*</form>*/}
-                                {/*<div className="separator"></div>*/}
+                                {/*<br/>*/}
                                 {/*<div className="bubble"></div>*/}
                                 {/*<button className="button" onClick={() => {this.createRectangles()}}>Create List</button>*/}
                                 {/*<button className="button" onClick={() => {this.pause = false}}>Sort</button>*/}
                                 {/*<button className="button  " onClick={() => {this.pause = true}}>Pause</button>*/}
-                                {/*<div className="separator"></div>*/}
+                                {/*<br/>*/}
                                 {/*</div>*/}
                             </div>
                         </Col>

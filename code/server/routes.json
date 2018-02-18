@@ -8,7 +8,7 @@
   "bubble": {
     "method": "GET",
     "path": "/bubble",
-    "render": "bubblesort-home",
+    "render": "bubble",
     "title": "Title"
   }
 }
