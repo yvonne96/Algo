@@ -37,6 +37,7 @@ class Header extends Component {
                     <ul>
                         <li><Link to='/'>Algo</Link></li>
                         <li><Link to='/bubble'>Sorting</Link></li>
+                        <li><Link to='/convexhull'>Convex Hull</Link></li>
                         <li><Link to='/binarySearchTree'>Trees</Link></li>
                         <li><Link to='/bfs'>Graph</Link></li>
                         <li><Link to='/something'>Data Structures</Link></li>
