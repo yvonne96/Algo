@@ -35,7 +35,7 @@ class Header extends Component {
                     </Nav>
                     <Nav>
                         <NavDropdown eventKey={3} title="Graph" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Dijokstras Algorithm</MenuItem>
+                            <MenuItem eventKey={3.1}>Dijkstra's Algorithm</MenuItem>
                         </NavDropdown>
                     </Nav>
                     <Nav>
