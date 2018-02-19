@@ -1,105 +1,113 @@
 .brand-logo > h2 {
-    margin: 4px;
+  margin: 4px;
 }
 
 body {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 .list {
-    list-style-type: square;
+  list-style-type: square;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 .menu {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    box-shadow: 0 0 2pt rgba(51, 51, 51, 0.6);
-    width: 200pt;
-    padding: 0;
-    transition: display 0.3s;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  box-shadow: 0 0 2pt rgba(51, 51, 51, 0.6);
+  width: 200pt;
+  padding: 0;
+  transition: display 0.3s;
 }
 
 .menu > li {
-    padding: 8pt;
-    margin: 2pt;
-    transition: background-color 0.3s;
-
+  padding: 8pt;
+  margin: 2pt;
+  transition: background-color 0.3s;
 }
 
 .menu > li:hover {
-    background-color: skyblue;
+  background-color: skyblue;
 }
 
 .open {
-    display: flex;
+  display: flex;
 }
 
-
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 nav li {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li Link:hover:not(.active) {
-    background-color: #111;
+  background-color: #111;
 }
 
 .button {
-    background-color: #595E66;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+  background-color: #595e66;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 
-input[type=text]{
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin: 10px;
+input[type="text"] {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
 }
 
 .button-center {
-    text-align: center;
+  text-align: center;
 }
 
 .content {
-    /*margin: top,right,bottom,left*/
-    margin: 45px 20px 25px 20px;
-    background-color:white;
-    text-indent: 20px;
-    border-radius: 20px ;
-    box-shadow: 0 0 20px grey;
+  /*margin: top,right,bottom,left*/
+  margin: 45px 20px 25px 20px;
+  background-color: white;
+  text-indent: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px grey;
 }
 .contain {
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
 .separator {
-    margin: 5px 20px 20px 20px;
-    background: white;
-    height: 1px;
+  margin: 5px 20px 20px 20px;
+  background: white;
+  height: 1px;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.box .text {
+  display: block;
+  text-align: left;
 }
