@@ -32,7 +32,6 @@
     "mongodb": "^2.2.31",
     "pug": "^2.0.0-rc.3",
     "react": "^15.6.2",
-    "react-bootstrap": "^0.32.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.2",
     "react-grid": "~1.1.7",

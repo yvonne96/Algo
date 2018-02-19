@@ -2,11 +2,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import {
     Link,
     withRouter
 } from 'react-router-dom';
-import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 
 const mapStateToProps = connect(state => {
     return state;
@@ -15,8 +15,19 @@ const mapStateToProps = connect(state => {
 class Header extends Component {
     constructor(props) {
         super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+        dropdownOpen: false
+    };
     }
 
+
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+    }
 
     render() {
 

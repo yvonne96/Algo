@@ -4,11 +4,5 @@
     "path": "/",
     "render": "index",
     "title": "Title"
-  },
-  "bubble": {
-    "method": "GET",
-    "path": "/bubble",
-    "render": "bubble",
-    "title": "Title"
   }
 }
