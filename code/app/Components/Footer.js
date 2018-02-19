@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 const mapStateToProps = connect(state => {
-    return (state);
+  return state;
 });
 
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div className='Footer' />
-        );
-    }
+  render() {
+    return <div className="Footer" />;
+  }
 }
 
 export default mapStateToProps(Footer);

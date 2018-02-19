@@ -1,23 +1,20 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-    Link,
-    withRouter
-} from 'react-router-dom';
 import {MenuItem, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Link, withRouter } from "react-router-dom";
+
 
 const mapStateToProps = connect(state => {
-    return state;
+  return state;
 });
 
 class Header extends Component {
+
     constructor(props) {
         super(props);
     }
-
     render() {
-
         return (
             <div className='Header'>
                 <Navbar inverse collapseOnSelect>
@@ -32,8 +29,8 @@ class Header extends Component {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <NavDropdown eventKey={3} title="Graph" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Dijkstra's Algorithm</MenuItem>
+                        <NavDropdown eventKey={3} title="Convex Hull" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1} href="/convexhull">Convex Hull</MenuItem>
                         </NavDropdown>
                     </Nav>
                     <Nav>
@@ -53,10 +50,10 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-    history: PropTypes.object,
-    location: PropTypes.object,
-    postReducer: PropTypes.object,
-    toggleOpen: PropTypes.func
+  history: PropTypes.object,
+  location: PropTypes.object,
+  postReducer: PropTypes.object,
+  toggleOpen: PropTypes.func
 };
 
 export default mapStateToProps(withRouter(Header));

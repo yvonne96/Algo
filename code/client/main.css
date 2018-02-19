@@ -1,44 +1,42 @@
 .brand-logo > h2 {
-    margin: 4px;
+  margin: 4px;
 }
 
 body {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 .list {
-    list-style-type: square;
+  list-style-type: square;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
-
 
 .button {
-    background-color: #595E66;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+  background-color: #595e66;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 
-input[type=text]{
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin: 10px;
+input[type="text"] {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
 }
 
 .button-center {
-    text-align: center;
+  text-align: center;
 }
 
 .content {
-
     /*margin or padding: top,right,bottom,left*/
     margin: 45px 0px 0px 0px;
     padding: 10px 20px 20px 20px ;
@@ -54,3 +52,14 @@ input[type=text]{
     padding: 0;
     top: 0;
 }
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.box .text {
+  display: block;
+  text-align: left;
+}
+
