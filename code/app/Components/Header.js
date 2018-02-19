@@ -33,15 +33,33 @@ class Header extends Component {
 
         return (
             <div className='Header'>
-                <nav>
-                    <ul>
-                        <li><Link to='/'>Algo</Link></li>
-                        <li><Link to='/bubble'>Sorting</Link></li>
-                        <li><Link to='/binarySearchTree'>Trees</Link></li>
-                        <li><Link to='/bfs'>Graph</Link></li>
-                        <li><Link to='/something'>Data Structures</Link></li>
-                    </ul>
-                </nav>
+                <Navbar inverse collapseOnSelect>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="/">Algo</a>
+                        </Navbar.Brand>
+                    </Navbar.Header>
+                    <Nav>
+                        <NavDropdown eventKey={3} title="Sorting" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1} href="/bubble" >Bubble Sort</MenuItem>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown eventKey={3} title="Graph" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Dijkstra's Algorithm</MenuItem>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown eventKey={3} title="Data-Structures" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Something</MenuItem>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown eventKey={3} title="Trees" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Binary Search Tree</MenuItem>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar>
             </div>
         );
     }
