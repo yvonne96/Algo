@@ -38,6 +38,15 @@ module.exports = {
         loaders: ["react-hot-loader", "babel-loader"],
         exclude: "/node_modules",
         include: path.join(__dirname, "./adminApp")
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: "html-loader",
+          options: {
+            attrs: [":data-src"]
+          }
+        }
       }
     ]
   }

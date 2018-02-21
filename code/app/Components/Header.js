@@ -23,17 +23,14 @@ class Header extends Component {
           </Navbar.Header>
           <Nav>
             <NavDropdown eventKey={3} title="Sorting" id="basic-nav-dropdown">
+              <MenuItem href="/sortingHome">Home</MenuItem>
               <MenuItem eventKey={3.1} href="/bubble">
                 Bubble Sort
               </MenuItem>
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavDropdown
-              eventKey={3}
-              title="Divide & Conquer"
-              id="basic-nav-dropdown"
-            >
+            <NavDropdown title="Divide & Conquer" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1} href="/convexhull">
                 Convex Hull
               </MenuItem>
