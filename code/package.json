@@ -9,7 +9,7 @@
     "posttest": "nsp check"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "*.{js,css,md}": [
       "prettier --write",
       "git add"
     ]

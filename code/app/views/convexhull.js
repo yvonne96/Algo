@@ -13,35 +13,138 @@ const delay = t =>
   });
 
 class ConvexHull extends Component {
-  static intialState() {
+  initialState() {
     return {
       vars: {
-        nums: []
+        nums: [],
+        upperHull: [],
+        lowerHull: [],
+        lines: [],
+        i: 2
       },
       programState: [
         {
-          text: "points = sorted(points)",
-          command: () => {},
+          text: <p>points = sorted(points)</p>,
+          command: () => {
+            this.sortnums();
+          },
           active: false
         },
         {
-          text: "lowerHull = [points[0], points[1]]",
+          text: <p>upperHull = [points[1], points[0]]</p>,
+          command: () => {
+            this.assignHull(1, "upper");
+          },
           active: false
         },
         {
-          text: "upperHull = [points[-1], points[-2]]",
+          text: <p>for i in range(2, len(points)):</p>,
+          command: () => {
+            this.checkForLoopUpperHull();
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 30 }}>upperHull.insert(0, points[i])</p>
+          ),
+          command: () => {
+            this.pushNewLine(3, "upperHull");
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 30 }}>
+              while len(upperHull) > 2 and not clockwise(upperHull[:3]):
+            </p>
+          ),
+          command: () => {
+            this.checkWhileLoop(4, "upperHull", [5, 6, 4], [2], 1);
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 60 }}>upperHull.remove(upperHull[1])</p>
+          ),
+          command: () => {
+            this.colorPreviousLines(5);
+          },
+          active: false
+        },
+        {
+          command: () => {
+            this.removePreviousLines(5, "upperHull");
+          },
+          active: false
+        },
+        {
+          text: <p>lowerHull = [points[-2], points[-1]]</p>,
+          command: () => {
+            this.assignHull(7, "lower");
+          },
+          active: false
+        },
+        {
+          text: <p>for i in range(len(points) - 2, -1, -1):</p>,
+          command: () => {
+            this.checkForLoopLowerHull();
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 30 }}>lowerHull.insert(0, points[i])</p>
+          ),
+          command: () => {
+            this.pushNewLine(9, "lowerHull");
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 30 }}>
+              while len(lowerHull) > 2 and not clockwise(lowerHull[:3]):
+            </p>
+          ),
+          command: () => {
+            this.checkWhileLoop(10, "lowerHull", [11, 12, 10], [8], -1);
+          },
+          active: false
+        },
+        {
+          text: (
+            <p style={{ marginLeft: 60 }}>lowerHull.remove(lowerHull[1])</p>
+          ),
+          command: () => {
+            this.colorPreviousLines(11);
+          },
+          active: false
+        },
+        {
+          command: () => {
+            this.removePreviousLines(11, "lowerHull");
+          },
+          active: false
+        },
+        {
+          command: () => {
+            this.updateActiveProgram(-1);
+          },
           active: false
         }
       ],
-      queue: [0, 1, 1, 2, 3]
+      queue: [0, 1, 2]
     };
   }
+
   constructor(props) {
     super(props);
-    this.height = 500;
-    this.width = 800;
-
-    this.state = Object.assign({}, ConvexHull.intialState());
+    this.height = 330;
+    this.width = 600;
+    this.tick = 1000;
+    this.state = Object.assign({}, this.initialState());
   }
 
   updateActiveProgram(line) {
@@ -58,10 +161,26 @@ class ConvexHull extends Component {
     this.setState({ programState: oldProgramState });
   }
 
+  updateQueue(item) {
+    let { queue } = Object.assign({ queue: [] }, this.state);
+    queue = queue.concat(item);
+    this.setState({ queue });
+  }
+
   startClock() {
-    this.clock = setInterval(() => {
-      // Proc this.queue item
-    }, 1000);
+    this.clock = setInterval(async () => {
+      let { queue } = Object.assign({ queue: [] }, this.state);
+      const taskName = queue.shift();
+      const task = this.state.programState[taskName];
+      if (typeof task === "undefined") {
+        this.setState({ queue });
+        return;
+      }
+      const command = task.hasOwnProperty("command") ? task.command : () => {};
+      this.setState({ queue }, () => {
+        command();
+      });
+    }, this.tick);
   }
 
   stopClock() {
@@ -73,13 +192,11 @@ class ConvexHull extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state);
-
     this.state.vars.nums.forEach(point => {
       this.svgContainer
         .append("circle")
         .attr("cx", point[0])
-        .attr("cy", point[1])
+        .attr("cy", this.height - point[1])
         .attr("r", 5);
     });
   }
@@ -104,84 +221,118 @@ class ConvexHull extends Component {
       .attr("stroke-width", 3);
   }
 
-  async convexHull() {
-    let nums = this.state.vars.nums.map(point => {
-      return [point[0], this.height - point[1]];
-    });
-    nums.sort((a, b) => a[0] - b[0]);
-    this.updateActiveProgram(0);
-    await delay(4000);
-    var upperHull = [nums[1], nums[0]];
-    var lowerHull = [nums[nums.length - 2], nums[nums.length - 1]];
-    var lines = [];
+  updatePreviousLine() {
+    let vars = Object.assign({}, this.state).vars;
+    vars.lines[vars.lines.length - 1].attr("stroke", "black");
+    this.setState({ vars });
+  }
 
-    lines.push(this.placeLine(upperHull[0], upperHull[1]));
-    for (var i = 2; i < nums.length; i++) {
-      upperHull.unshift(nums[i]);
-      lines.push(this.placeLine(upperHull[0], upperHull[1]));
-      lines[lines.length - 1].attr("stroke", "#1ee51b");
-      await delay(1000);
-      lines[lines.length - 1].attr("stroke", "black");
-      while (
-        upperHull.length > 2 &&
-        !this.clockwise(upperHull[0], upperHull[1], upperHull[2])
-      ) {
-        upperHull.splice(1, 1);
-        lines[lines.length - 1].attr("stroke", "red");
-        lines[lines.length - 2].attr("stroke", "red");
-        await delay(500);
-        lines[lines.length - 1].remove();
-        lines.pop();
-        await delay(500);
-        lines[lines.length - 1].remove();
-        lines.pop();
-        await delay(500);
-        lines.push(this.placeLine(upperHull[0], upperHull[1]));
-        lines[lines.length - 1].attr("stroke", "#1ee51b");
-        await delay(1000);
-        lines[lines.length - 1].attr("stroke", "black");
-      }
+  sortnums() {
+    this.updateActiveProgram(0);
+    let vars = Object.assign({}, this.state).vars;
+    vars.nums.sort((a, b) => a[0] - b[0]);
+    this.setState({ vars });
+  }
+
+  assignHull(active, upperlower) {
+    this.updateActiveProgram(active);
+    let nums = this.state.vars.nums;
+    let { vars } = Object.assign({}, this.state);
+
+    if (upperlower == "upper") {
+      vars.upperHull = [nums[1], nums[0]];
+      vars.lines.push(
+        this.placeLine(vars.upperHull[0], vars.upperHull[1], "#1ee51b")
+      );
+    } else {
+      vars.lowerHull = [nums[nums.length - 2], nums[nums.length - 1]];
+      vars.lines.push(
+        this.placeLine(vars.lowerHull[0], vars.lowerHull[1], "#1ee51b")
+      );
     }
-    lines = [];
-    lines.push(this.placeLine(lowerHull[0], lowerHull[1]));
-    for (var i = nums.length - 3; i >= 0; i--) {
-      lowerHull.unshift(nums[i]);
-      lines.push(this.placeLine(lowerHull[0], lowerHull[1]));
-      lines[lines.length - 1].attr("stroke", "#1ee51b");
-      await delay(1000);
-      lines[lines.length - 1].attr("stroke", "black");
-      while (
-        lowerHull.length > 2 &&
-        !this.clockwise(lowerHull[0], lowerHull[1], lowerHull[2])
-      ) {
-        lowerHull.splice(1, 1);
-        lines[lines.length - 1].attr("stroke", "red");
-        lines[lines.length - 2].attr("stroke", "red");
-        await delay(500);
-        lines[lines.length - 1].remove();
-        lines.pop();
-        await delay(500);
-        lines[lines.length - 1].remove();
-        lines.pop();
-        await delay(500);
-        lines.push(this.placeLine(lowerHull[0], lowerHull[1]));
-        lines[lines.length - 1].attr("stroke", "#1ee51b");
-        await delay(1000);
-        lines[lines.length - 1].attr("stroke", "black");
-      }
+    this.setState({ vars });
+  }
+
+  checkForLoopUpperHull() {
+    this.updateActiveProgram(2);
+    this.updatePreviousLine();
+    let { vars } = Object.assign({}, this.state);
+    if (vars.i < vars.nums.length) {
+      this.updateQueue([3, 4]);
+    } else {
+      vars.i = vars.nums.length - 3;
+      this.updateQueue([7, 8]);
+      this.setState({ vars });
     }
   }
 
-  addText(line, indent, n) {
-    return this.textContainer
-      .append("div")
-      .attr("dy", ".35em")
-      .style("font-size", "20px")
-      .text(line);
+  checkForLoopLowerHull() {
+    this.updateActiveProgram(8);
+    this.updatePreviousLine();
+    let i = this.state.vars.i;
+    if (i >= 0) {
+      this.updateQueue([9, 10]);
+    } else {
+      this.updateQueue([13]);
+    }
+  }
+
+  pushNewLine(active, key) {
+    this.updateActiveProgram(active);
+    let { vars } = Object.assign({}, this.state);
+    let nums = vars.nums;
+    let i = vars.i;
+
+    vars[key].unshift(nums[i]);
+    vars.lines.push(this.placeLine(vars[key][0], vars[key][1], "#1ee51b"));
+
+    this.setState({ vars });
+  }
+
+  checkWhileLoop(active, key, next1, next2, j) {
+    this.updateActiveProgram(active);
+    this.updatePreviousLine();
+    let { vars } = Object.assign({}, this.state);
+    if (
+      vars[key].length > 2 &&
+      !this.clockwise(vars[key][0], vars[key][1], vars[key][2])
+    ) {
+      this.updateQueue(next1);
+    } else {
+      vars.i += j;
+      this.updateQueue(next2);
+    }
+
+    this.setState({ vars });
+  }
+
+  colorPreviousLines(active) {
+    this.updateActiveProgram(active);
+    let { vars } = Object.assign({}, this.state);
+    vars.lines[vars.lines.length - 1].attr("stroke", "red");
+    vars.lines[vars.lines.length - 2].attr("stroke", "red");
+    this.setState({ vars });
+  }
+
+  removePreviousLines(active, key) {
+    this.updateActiveProgram(active);
+    let { vars } = Object.assign({}, this.state);
+
+    vars[key].splice(1, 1);
+    vars.lines[vars.lines.length - 1].remove();
+    vars.lines.pop();
+    vars.lines[vars.lines.length - 1].remove();
+    vars.lines.pop();
+    vars.lines.push(this.placeLine(vars[key][0], vars[key][1], "#1ee51b"));
+
+    this.setState({ vars });
   }
 
   refresh() {
-    this.setState(ConvexHull.intialState());
+    this.stopClock();
+    this.setState(this.initialState());
+    this.tick = 1000;
+
     d3.select("svg").remove();
     this.svgContainer = d3
       .select("div.convex")
@@ -201,9 +352,21 @@ class ConvexHull extends Component {
   placePoint(point) {
     var vars = Object.assign({}, this.state.vars);
 
-    vars.nums.push([point[0], point[1]]);
+    vars.nums.push([point[0], this.height - point[1]]);
 
     this.setState({ vars });
+  }
+
+  slow() {
+    this.tick *= 2;
+    this.stopClock();
+    this.startClock();
+  }
+
+  fast() {
+    this.tick /= 2;
+    this.stopClock();
+    this.startClock();
   }
 
   render() {
@@ -216,9 +379,10 @@ class ConvexHull extends Component {
           <div className="box">
             <div className="convex" />
             <div className="text">
-              {this.state.programState.map(line => {
+              {this.state.programState.map((line, i) => {
                 return (
                   <div
+                    key={i}
                     style={{
                       backgroundColor: line.active ? "#1ee51b" : "transparent"
                     }}
@@ -229,18 +393,19 @@ class ConvexHull extends Component {
               })}
             </div>
           </div>
+          <div className="separator" />
           <button
             className="button"
             onClick={() => {
               this.refresh();
             }}
           >
-            Refresh
+            Reset
           </button>
           <button
             className="button"
             onClick={() => {
-              this.convexHull();
+              this.startClock();
             }}
           >
             Run
@@ -248,10 +413,26 @@ class ConvexHull extends Component {
           <button
             className="button  "
             onClick={() => {
-              this.pause = true;
+              this.stopClock();
             }}
           >
             Pause
+          </button>
+          <button
+            className="button  "
+            onClick={() => {
+              this.fast();
+            }}
+          >
+            Faster
+          </button>
+          <button
+            className="button  "
+            onClick={() => {
+              this.slow();
+            }}
+          >
+            Slower
           </button>
           <div className="separator" />
         </div>
