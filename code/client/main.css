@@ -63,3 +63,6 @@ input[type="text"] {
   text-align: left;
 }
 
+.box .text p {
+  margin: 0;
+}
