@@ -1,27 +1,24 @@
-require('dotenv').config();
-const path = require('path');
-const webpack = require('webpack');
+require("dotenv").config();
+const path = require("path");
+const webpack = require("webpack");
 
 // noinspection Annotator
 module.exports = {
-  devtool: 'eval',
+  devtool: "eval",
   devServer: {
     env: process.env.NODE_ENV,
     hot: true,
     quiet: true,
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: "./"
   },
   entry: {
-    client: [
-      'webpack-hot-middleware/client',
-      './app/app.js'
-    ],
+    client: ["webpack-hot-middleware/client", "babel-polyfill", "./app/app.js"]
   },
   output: {
-    path: path.join(__dirname, 'client'),
-    filename: '[name].bundle.js',
-    publicPath: '/js'
+    path: path.join(__dirname, "client"),
+    filename: "[name].bundle.js",
+    publicPath: "/js"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin({
@@ -32,15 +29,15 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot-loader', 'babel-loader'],
-        exclude: '/node_modules',
-        include: path.join(__dirname, './app')
+        loaders: ["react-hot-loader", "babel-loader"],
+        exclude: "/node_modules",
+        include: path.join(__dirname, "./app")
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot-loader', 'babel-loader'],
-        exclude: '/node_modules',
-        include: path.join(__dirname, './adminApp')
+        loaders: ["react-hot-loader", "babel-loader"],
+        exclude: "/node_modules",
+        include: path.join(__dirname, "./adminApp")
       }
     ]
   }
