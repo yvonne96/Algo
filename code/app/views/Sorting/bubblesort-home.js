@@ -172,11 +172,11 @@ class BubbleSortHome extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
-              <div className="content" dangerouslySetInnerHTML={Example} />
-            </Col>
-            <Col md={6}>
+            <Col md={7}>
               <div className="content" dangerouslySetInnerHTML={Optimize} />
+            </Col>
+            <Col md={5}>
+              <div className="content" dangerouslySetInnerHTML={Example} />
             </Col>
             <Col md={5}>
               <div className="content" dangerouslySetInnerHTML={Useful} />

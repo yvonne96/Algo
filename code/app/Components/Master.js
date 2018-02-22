@@ -9,9 +9,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 import Home from "./../views/Home/index";
-import BubbleSortHome from "./../views/Sorting/bubblesort-home";
-import ConvexHull from "../views/Divide&Conquer/convexhull";
 import SortingHome from "./../views/Sorting/Sorting-home";
+import BubbleSortHome from "./../views/Sorting/bubblesort-home";
+import DivideConquerHome from "./../views/Divide&Conquer/divideConquerHome";
+import ConvexHull from "../views/Divide&Conquer/convexhull";
 
 class Master extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Master extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/sortingHome" component={SortingHome} />
             <Route exact path="/bubble" component={BubbleSortHome} />
+            <Route exact path="/divide&Conquer" component={DivideConquerHome} />
             <Route exact path="/convexhull" component={ConvexHull} />
             <Route component={NoMatch} />
           </Switch>

@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import * as d3 from "d3";
+import { Col, Grid, Row } from "react-bootstrap";
+
+import Page1 from "./convexHullHtml/About.html";
+import Page2 from "./convexHullHtml/Quick Facts.html";
+import Page3 from "./convexHullHtml/Example.html";
+import Page4 from "./convexHullHtml/Optimize.html";
+import Page5 from "./convexHullHtml/Useful.html";
+
+var About = { __html: Page1 };
+var Facts = { __html: Page2 };
+var Example = { __html: Page3 };
+var Optimize = { __html: Page4 };
+var Useful = { __html: Page5 };
 
 const mapStateToProps = connect(state => {
   return state;
@@ -372,70 +385,97 @@ class ConvexHull extends Component {
   render() {
     return (
       <div className="ConvexHull">
-        <div className="content button-center">
-          <div className="separator" />
-          <p>Please place coordinates inside box</p>
-          <div className="separator" />
-          <div className="box">
-            <div className="convex" />
-            <div className="text">
-              {this.state.programState.map((line, i) => {
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      backgroundColor: line.active ? "#1ee51b" : "transparent"
-                    }}
-                  >
-                    {line.text}
+        <Grid>
+          <Row>
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={About} />
+            </Col>
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Facts} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="content button-center">
+                <br />
+                <p>Please place coordinates inside box</p>
+                <br />
+                <div className="box">
+                  <div className="convex" />
+                  <div className="text">
+                    {this.state.programState.map((line, i) => {
+                      return (
+                        <div
+                          key={i}
+                          style={{
+                            backgroundColor: line.active
+                              ? "#1ee51b"
+                              : "transparent"
+                          }}
+                        >
+                          {line.text}
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="separator" />
-          <button
-            className="button"
-            onClick={() => {
-              this.refresh();
-            }}
-          >
-            Reset
-          </button>
-          <button
-            className="button"
-            onClick={() => {
-              this.startClock();
-            }}
-          >
-            Run
-          </button>
-          <button
-            className="button  "
-            onClick={() => {
-              this.stopClock();
-            }}
-          >
-            Pause
-          </button>
-          <button
-            className="button  "
-            onClick={() => {
-              this.fast();
-            }}
-          >
-            Faster
-          </button>
-          <button
-            className="button  "
-            onClick={() => {
-              this.slow();
-            }}
-          >
-            Slower
-          </button>
-          <div className="separator" />
-        </div>
+                </div>
+                <br />
+                <button
+                  className="button"
+                  onClick={() => {
+                    this.refresh();
+                  }}
+                >
+                  Reset
+                </button>
+                <button
+                  className="button"
+                  onClick={() => {
+                    this.startClock();
+                  }}
+                >
+                  Run
+                </button>
+                <button
+                  className="button  "
+                  onClick={() => {
+                    this.stopClock();
+                  }}
+                >
+                  Pause
+                </button>
+                <button
+                  className="button  "
+                  onClick={() => {
+                    this.fast();
+                  }}
+                >
+                  Faster
+                </button>
+                <button
+                  className="button  "
+                  onClick={() => {
+                    this.slow();
+                  }}
+                >
+                  Slower
+                </button>
+                <br />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Example} />
+            </Col>
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Optimize} />
+            </Col>
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Useful} />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
