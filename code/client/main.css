@@ -5,9 +5,6 @@
 body {
   background-color: lightgray;
 }
-.list {
-  list-style-type: square;
-}
 
 p {
   font-size: 20px;
@@ -37,20 +34,21 @@ input[type="text"] {
 }
 
 .content {
-    /*margin or padding: top,right,bottom,left*/
-    margin: 45px 0px 0px 0px;
-    padding: 10px 20px 20px 20px ;
-    background-color:white;
-    text-indent: 20px;
-    border-radius: 20px ;
-    box-shadow: 0 0 20px grey;
+  /*margin or padding: top,right,bottom,left*/
+  margin: 45px 0px 0px 0px;
+  padding: 10px 20px 20px 20px;
+  background-color: white;
+  text-indent: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px grey;
+  line-height: 250%;
 }
 
 .navbar {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
 
 .box {
@@ -65,4 +63,32 @@ input[type="text"] {
 
 .box .text p {
   margin: 0;
+}
+
+.featureList {
+  font-size: 20px;
+  display: list-item;
+  list-style-type: circle;
+  line-height: 250%;
+  text-indent: 20px;
+  list-style-position: inside;
+}
+.defineList {
+  font-size: 20px;
+  list-style-type: none;
+  line-height: 200%;
+  text-indent: 20px;
+}
+.aboutList {
+  font-size: 20px;
+  line-height: 250%;
+  text-indent: 20px;
+  list-style-position: inside;
+}
+.codeStyle {
+  font-size: 15px;
+  text-indent: 15px;
+}
+.tab {
+  margin-left: 20px;
 }
