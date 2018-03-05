@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as convex from "./ConvexFunctions";
 import * as d3 from "d3";
+import { Glyphicon } from "react-bootstrap";
 
 const mapStateToProps = connect(state => {
   return state;
@@ -68,20 +69,20 @@ class ConvexQ2 extends Component {
             <p style={{ color: "red" }}>Incorrect please try again</p>
           )}
         <button
-          className="button"
+          className="button refreshBtn"
           onClick={() => {
             this.refresh();
           }}
         >
-          Reset
+          <Glyphicon glyph="refresh">Reset</Glyphicon>
         </button>
         <button
-          className="button"
+          className="button playBtn"
           onClick={() => {
             this.checkAnswer();
           }}
         >
-          Submit
+          <Glyphicon glyph="save">Submit</Glyphicon>
         </button>
       </div>
     );

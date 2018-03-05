@@ -20,7 +20,7 @@ p {
 }
 
 .button {
-  background-color: #595e66;
+  border-radius: 10px;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -28,8 +28,34 @@ p {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  box-shadow: 0 0 10px grey;
+}
+.createBtn {
+  background-color: #333333;
+  border-color: #737373;
 }
 
+.playBtn {
+  background-color: darkgreen;
+  border-color: forestgreen;
+}
+
+.pauseBtn {
+  background-color: orange;
+  border-color: #ffb84d;
+}
+.fastSlowBtn {
+  background-color: darkturquoise;
+  border-color: turquoise;
+}
+.refreshBtn {
+  background-color: #b30000;
+  border-color: #cc0000;
+}
+
+.glyphicon:before {
+  margin-right: 5px;
+}
 input[type="text"] {
   width: 30%;
   border: 1px solid black;
