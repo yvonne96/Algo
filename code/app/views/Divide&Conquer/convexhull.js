@@ -7,7 +7,7 @@ import ConvexQ2 from "./ConvexHull/ConvexHullQuestions/ConvexQ2";
 import ConvexQ3 from "./ConvexHull/ConvexHullQuestions/ConvexQ3";
 import ConvexQ4 from "./ConvexHull/ConvexHullQuestions/ConvexQ4";
 
-import ConvexTuorial from "./ConvexHull/convexHullTutorial";
+import ConvexTutorial from "./ConvexHull/convexHullTutorial";
 
 import Page1 from "./ConvexHull/convexHullHtml/About.html";
 import Page2 from "./ConvexHull/convexHullHtml/Quick Facts.html";
@@ -50,7 +50,7 @@ class ConvexHull extends Component {
           </Row>
           <Row>
             <Col>
-              <ConvexTuorial />
+              <ConvexTutorial />
             </Col>
           </Row>
           <Row>
@@ -79,6 +79,7 @@ class ConvexHull extends Component {
                 )}
                 {this.question < 3 && (
                   <button
+                    id="nextBtn"
                     className="button fastSlowBtn"
                     onClick={() => {
                       this.updateQuestion(1);
