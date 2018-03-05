@@ -17,14 +17,14 @@ export class InsertionSortTutorial extends Component {
   initialState() {
     return {
       vars: {
-        i: 0,
-        to_place: 0,
+        i: 1,
+        to_place: -1,
         pos: 0,
         numbers: []
       },
       programState: [
         {
-          text: <p>for i in range(len(l)):</p>,
+          text: <p>for i in range(1, len(l)):</p>,
           command: () => {
             this.checkForLoop();
           },
@@ -47,7 +47,7 @@ export class InsertionSortTutorial extends Component {
         {
           text: (
             <p style={{ marginLeft: 30 }}>
-              while 0 &lt; pos and l[pos] > to_place:
+              while 0 &lt;= pos and l[pos] > to_place:
             </p>
           ),
           command: () => {
@@ -56,20 +56,29 @@ export class InsertionSortTutorial extends Component {
           active: false
         },
         {
-          text: <p style={{ marginLeft: 90 }}>min_found = j</p>,
+          text: <p style={{ marginLeft: 60 }}>l[pos + 1] = l[pos]</p>,
           command: () => {
-            this.updateMin(4, "j");
+            this.updateList();
           },
           active: false
         },
         {
-          text: (
-            <p style={{ marginLeft: 30 }}>
-              [min_found], l[i] = l[i], l[min_found]
-            </p>
-          ),
+          text: <p style={{ marginLeft: 60 }}>pos -= 1</p>,
           command: () => {
-            this.swapNumbers();
+            this.decreasePos();
+          },
+          active: false
+        },
+        {
+          text: <p style={{ marginLeft: 30 }}>l[pos + 1] = to_place</p>,
+          command: () => {
+            this.fillPos();
+          },
+          active: false
+        },
+        {
+          command: () => {
+            this.moveLeft();
           },
           active: false
         }
@@ -81,8 +90,9 @@ export class InsertionSortTutorial extends Component {
   constructor(props) {
     super(props);
     this.tick = 1000;
-    this.width = 500;
+    this.width = 600;
     this.height = 100;
+    this.wrongInput = false;
     this.state = Object.assign({}, this.initialState());
   }
 
@@ -111,7 +121,18 @@ export class InsertionSortTutorial extends Component {
     this.state = Object.assign({}, this.initialState());
     this.updateActiveProgram(-1);
     let { vars } = Object.assign({}, this.state);
-    var nums = document.getElementById("nums").value.split(/\D+/);
+    var nums = document
+      .getElementById("nums")
+      .value.trim()
+      .split(/\D+/);
+    this.wrongInput = false;
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i].length > 2 || i > 7 || nums[i] == "") {
+        this.wrongInput = true;
+        this.forceUpdate();
+        return;
+      }
+    }
     vars.numbers = [];
     d3.select("svg").remove();
     var svgContainer = d3
@@ -135,7 +156,7 @@ export class InsertionSortTutorial extends Component {
           .attr("x", i * 60 + 55)
           .attr("y", 25)
           .attr("dy", ".35em")
-          .style("font-size", "34px")
+          .style("font-size", "25px")
           .text(nums[i])
       ]);
     }
@@ -153,6 +174,25 @@ export class InsertionSortTutorial extends Component {
         .attr("x", Number(vars.numbers[i][1].attr("x")) + 60)
         .duration(this.tick);
     }
+    this.setState({ vars });
+  }
+
+  moveLeft() {
+    this.updateActiveProgram(6);
+    let { vars } = Object.assign({}, this.state);
+    this.fill(vars.numbers[vars.pos + 1][0], "white");
+    for (var i = vars.to_place + 1; i < vars.numbers.length; i++) {
+      vars.numbers[i][0]
+        .transition()
+        .attr("x", Number(vars.numbers[i][0].attr("x")) - 60)
+        .duration(this.tick);
+      vars.numbers[i][1]
+        .transition()
+        .attr("x", Number(vars.numbers[i][1].attr("x")) - 60)
+        .duration(this.tick);
+    }
+    this.updateQueue([0]);
+    this.setState({ vars });
   }
 
   checkForLoop() {
@@ -181,6 +221,7 @@ export class InsertionSortTutorial extends Component {
     this.updateActiveProgram(2);
     let { vars } = Object.assign({}, this.state);
     vars.pos = vars.i - 1;
+    vars.i++;
     this.setState({ vars });
     this.updateQueue([3]);
   }
@@ -188,71 +229,56 @@ export class InsertionSortTutorial extends Component {
   checkWhileLoop() {
     this.updateActiveProgram(3);
     let { vars } = Object.assign({}, this.state);
+
     if (
-      0 < vars.pos ||
+      0 <= vars.pos &&
       Number(vars.numbers[vars.pos][0].attr("number")) >
         Number(vars.numbers[vars.to_place][0].attr("number"))
     ) {
       this.updateQueue([4]);
+    } else {
+      this.updateQueue([6]);
     }
   }
 
-  updateMin(active, ij) {
-    this.updateActiveProgram(active);
+  updateList() {
+    this.updateActiveProgram(4);
     let { vars } = Object.assign({}, this.state);
-    if (vars.min_found > -1) {
-      this.fill(vars.numbers[vars.min_found][0], "white");
-    }
-    if (ij == "i") {
-      vars.min_found = vars.i;
-    } else {
-      vars.min_found = vars.j - 1;
-    }
-    this.fill(vars.numbers[vars.min_found][0], "red");
-    this.updateQueue([2]);
-  }
-
-  compareMin() {
-    this.updateActiveProgram(3);
-    let { vars } = Object.assign({}, this.state);
-    if (
-      Number(vars.numbers[vars.j][0].attr("number")) <
-      Number(vars.numbers[vars.min_found][0].attr("number"))
-    ) {
-      this.updateQueue([4]);
-    } else {
-      this.updateQueue([2]);
-    }
-    vars.j++;
+    vars.numbers[vars.pos][0]
+      .transition()
+      .attr("x", Number(vars.numbers[vars.pos][0].attr("x")) + 60)
+      .duration(this.tick);
+    vars.numbers[vars.pos][1]
+      .transition()
+      .attr("x", Number(vars.numbers[vars.pos][1].attr("x")) + 60)
+      .duration(this.tick);
     this.setState({ vars });
+    this.updateQueue([5]);
   }
 
-  swapNumbers() {
+  decreasePos() {
     this.updateActiveProgram(5);
     let { vars } = Object.assign({}, this.state);
-    this.swap(vars.numbers[vars.i][0], vars.numbers[vars.min_found][0]);
-    this.swap(vars.numbers[vars.i][1], vars.numbers[vars.min_found][1]);
-    var num1 = vars.numbers[vars.i][0];
-    vars.numbers[vars.i][0] = vars.numbers[vars.min_found][0];
-    vars.numbers[vars.min_found][0] = num1;
-    var num2 = vars.numbers[vars.i][1];
-    vars.numbers[vars.i][1] = vars.numbers[vars.min_found][1];
-    vars.numbers[vars.min_found][1] = num2;
-    vars.i++;
+    vars.pos--;
     this.setState({ vars });
-    this.updateQueue([0]);
+    this.updateQueue([3]);
   }
 
-  swap(box1, box2) {
-    box1
+  fillPos() {
+    this.updateActiveProgram(6);
+    let { vars } = Object.assign({}, this.state);
+    vars.numbers.splice(vars.pos + 1, 0, vars.numbers[vars.to_place]);
+    vars.numbers.splice(vars.to_place + 1, 1);
+    vars.numbers[vars.pos + 1][0]
       .transition()
-      .attr("x", box2.attr("x"))
+      .attr("x", (vars.pos + 1) * 60 + 40)
       .duration(this.tick);
-
-    box2
+    vars.numbers[vars.pos + 1][1]
       .transition()
-      .attr("x", box1.attr("x"))
+      .attr("x", (vars.pos + 1) * 60 + 55)
       .duration(this.tick);
+    this.updateQueue([7]);
+    this.setState({ vars });
   }
 
   fill(box1, colour) {
@@ -272,6 +298,7 @@ export class InsertionSortTutorial extends Component {
   }
 
   startClock() {
+    this.stopClock();
     this.clock = setInterval(async () => {
       let { queue } = Object.assign({ queue: [] }, this.state);
       const taskName = queue.shift();
@@ -308,8 +335,11 @@ export class InsertionSortTutorial extends Component {
       <div className="content button-center">
         <h2>Try It Yourself</h2>
         <br />
+        {this.wrongInput && (
+          <p style={{ color: "red" }}>Please enter valid input</p>
+        )}
         <form>
-          Please enter up to 10 numbers to be sorted:
+          Please enter up to 8 numbers between 1 and 99:
           <input type="text" id="nums" />
         </form>
         <div className="box">
