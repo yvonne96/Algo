@@ -59,7 +59,7 @@ class BubbleSortTutorial extends Component {
 
   constructor(props) {
     super(props);
-    this.pause = false;
+    this.WrongInput = false;
     this.tick = 1000;
     this.state = Object.assign({}, this.initialState());
   }
@@ -89,7 +89,18 @@ class BubbleSortTutorial extends Component {
     this.updateActiveProgram(-1);
     this.state = Object.assign({}, this.initialState());
     let { vars } = Object.assign({}, this.state);
-    var nums = document.getElementById("nums").value.split(/\D+/);
+    var nums = document
+      .getElementById("nums")
+      .value.trim()
+      .split(/\D+/);
+    this.wrongInput = false;
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i].length > 2 || i > 7 || nums[i] == "") {
+        this.wrongInput = true;
+        this.forceUpdate();
+        return;
+      }
+    }
     vars.numbers = [];
     d3.select("svg").remove();
     var svgContainer = d3
@@ -113,7 +124,7 @@ class BubbleSortTutorial extends Component {
           .attr("x", i * 60 + 55)
           .attr("y", 25)
           .attr("dy", ".35em")
-          .style("font-size", "34px")
+          .style("font-size", "25px")
           .text(nums[i])
       ]);
     }
@@ -212,6 +223,7 @@ class BubbleSortTutorial extends Component {
   }
 
   startClock() {
+    this.stopClock();
     this.clock = setInterval(async () => {
       let { queue } = Object.assign({ queue: [] }, this.state);
       const taskName = queue.shift();
@@ -248,8 +260,11 @@ class BubbleSortTutorial extends Component {
       <div className="content button-center">
         <h2>Try It Yourself</h2>
         <br />
+        {this.wrongInput && (
+          <p style={{ color: "red" }}>Please enter valid input</p>
+        )}
         <form>
-          Please enter up to 10 numbers to be sorted:
+          Please enter up to 8 numbers between 1 and 99:
           <input type="text" id="nums" />
         </form>
         <div className="box">
