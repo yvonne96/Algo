@@ -15,7 +15,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class DivideConquerHome extends Component {
+export class DivideConquerHome extends Component {
   constructor(props) {
     super(props);
   }

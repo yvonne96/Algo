@@ -7,7 +7,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class ConvexTutorial extends Component {
+export class ConvexTutorial extends Component {
   initialState() {
     return {
       vars: {
@@ -140,6 +140,11 @@ class ConvexTutorial extends Component {
     this.width = 550;
     this.tick = 1000;
     this.state = Object.assign({}, this.initialState());
+    this.refresh = this.refresh.bind(this);
+    this.startClock = this.startClock.bind(this);
+    this.stopClock = this.stopClock.bind(this);
+    this.slow = this.slow.bind(this);
+    this.fast = this.fast.bind(this);
   }
 
   updateActiveProgram(line) {
@@ -379,6 +384,7 @@ class ConvexTutorial extends Component {
     return (
       <div className="content button-center">
         <br />
+        <h2>Try it Yourself</h2>
         <p>Please place coordinates inside box</p>
         <br />
         <div className="box">
@@ -400,6 +406,7 @@ class ConvexTutorial extends Component {
         </div>
         <br />
         <button
+          id="refreshButton"
           className="button"
           onClick={() => {
             this.refresh();
@@ -408,6 +415,7 @@ class ConvexTutorial extends Component {
           <Glyphicon glyph="refresh" />
         </button>
         <button
+          id="playButton"
           className="button"
           onClick={() => {
             this.startClock();
@@ -416,6 +424,7 @@ class ConvexTutorial extends Component {
           <Glyphicon glyph="play" />
         </button>
         <button
+          id="pauseButton"
           className="button  "
           onClick={() => {
             this.stopClock();
@@ -424,6 +433,7 @@ class ConvexTutorial extends Component {
           <Glyphicon glyph="pause" />
         </button>
         <button
+          id="slowButton"
           className="button  "
           onClick={() => {
             this.slow();
@@ -432,6 +442,7 @@ class ConvexTutorial extends Component {
           <Glyphicon glyph="fast-backward" />
         </button>
         <button
+          id="fastButton"
           className="button"
           onClick={() => {
             this.fast();

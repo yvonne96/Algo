@@ -13,7 +13,7 @@ let delay = t => {
   });
 };
 
-class InsertionSortTutorial extends Component {
+export class InsertionSortTutorial extends Component {
   initialState() {
     return {
       vars: {
@@ -330,6 +330,7 @@ class InsertionSortTutorial extends Component {
           </div>
         </div>
         <button
+          id="createBtn"
           className="button"
           onClick={() => {
             this.createRectangles();
@@ -338,6 +339,7 @@ class InsertionSortTutorial extends Component {
           <Glyphicon glyph="pencil" />
         </button>
         <button
+          id="playBtn"
           className="button"
           onClick={() => {
             this.startClock();
@@ -346,6 +348,7 @@ class InsertionSortTutorial extends Component {
           <Glyphicon glyph="play" />
         </button>
         <button
+          id="pauseBtn"
           className="button  "
           onClick={() => {
             this.stopClock();
@@ -354,6 +357,7 @@ class InsertionSortTutorial extends Component {
           <Glyphicon glyph="pause" />
         </button>
         <button
+          id="slowBtn"
           className="button  "
           onClick={() => {
             this.slow();
@@ -362,6 +366,7 @@ class InsertionSortTutorial extends Component {
           <Glyphicon glyph="fast-backward" />
         </button>
         <button
+          id="fastBtn"
           className="button  "
           onClick={() => {
             this.fast();

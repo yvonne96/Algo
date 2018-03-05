@@ -13,7 +13,7 @@ let delay = t => {
   });
 };
 
-class SelectionSortTutorial extends Component {
+export class SelectionSortTutorial extends Component {
   initialState() {
     return {
       vars: {
@@ -80,6 +80,11 @@ class SelectionSortTutorial extends Component {
     this.width = 500;
     this.height = 100;
     this.state = Object.assign({}, this.initialState());
+    this.createRectangles = this.createRectangles.bind(this);
+    this.startClock = this.startClock.bind(this);
+    this.stopClock = this.stopClock.bind(this);
+    this.slow = this.slow.bind(this);
+    this.fast = this.fast.bind(this);
   }
 
   updateQueue(item) {
@@ -301,6 +306,7 @@ class SelectionSortTutorial extends Component {
           </div>
         </div>
         <button
+          id="createBtn"
           className="button"
           onClick={() => {
             this.createRectangles();
@@ -309,6 +315,7 @@ class SelectionSortTutorial extends Component {
           <Glyphicon glyph="pencil" />
         </button>
         <button
+          id="playBtn"
           className="button"
           onClick={() => {
             this.startClock();
@@ -317,6 +324,7 @@ class SelectionSortTutorial extends Component {
           <Glyphicon glyph="play" />
         </button>
         <button
+          id="pauseBtn"
           className="button  "
           onClick={() => {
             this.stopClock();
@@ -325,6 +333,7 @@ class SelectionSortTutorial extends Component {
           <Glyphicon glyph="pause" />
         </button>
         <button
+          id="slowBtn"
           className="button  "
           onClick={() => {
             this.slow();
@@ -333,6 +342,7 @@ class SelectionSortTutorial extends Component {
           <Glyphicon glyph="fast-backward" />
         </button>
         <button
+          id="fastBtn"
           className="button  "
           onClick={() => {
             this.fast();

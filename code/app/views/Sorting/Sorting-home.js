@@ -15,7 +15,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class SortingHome extends Component {
+export class SortingHome extends Component {
   constructor(props) {
     super(props);
   }

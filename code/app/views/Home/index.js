@@ -19,7 +19,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class Home extends Component {
+export class Home extends Component {
   constructor(props) {
     super(props);
   }
