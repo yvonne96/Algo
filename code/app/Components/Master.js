@@ -13,6 +13,8 @@ import SortingHome from "./../views/Sorting/Sorting-home";
 import BubbleSortHome from "./../views/Sorting/bubblesort-home";
 import DivideConquerHome from "./../views/Divide&Conquer/divideConquerHome";
 import ConvexHull from "../views/Divide&Conquer/convexhull";
+import SelectionSortHome from "./../views/Sorting/selectionsort-home";
+import InsertionSortHome from "./../views/Sorting/insertionsort-home";
 
 class Master extends Component {
   constructor(props) {
@@ -36,6 +38,8 @@ class Master extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/sortingHome" component={SortingHome} />
             <Route exact path="/bubble" component={BubbleSortHome} />
+            <Route exact path="/selection" component={SelectionSortHome} />
+            <Route exact path="/insertion" component={InsertionSortHome} />
             <Route exact path="/divide&Conquer" component={DivideConquerHome} />
             <Route exact path="/convexhull" component={ConvexHull} />
             <Route component={NoMatch} />

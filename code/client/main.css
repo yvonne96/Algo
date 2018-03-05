@@ -61,6 +61,8 @@ input[type="text"] {
 .box .text {
   display: block;
   text-align: left;
+  font-family: FreeMono;
+  font-weight: bold;
 }
 
 .box .text p {

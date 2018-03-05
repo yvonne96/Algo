@@ -29,6 +29,12 @@ class Header extends Component {
               <MenuItem eventKey={3.1} href="/bubble">
                 Bubble Sort
               </MenuItem>
+              <MenuItem eventKey={3.2} href="/selection">
+                Selection Sort
+              </MenuItem>
+              <MenuItem eventKey={3.2} href="/insertion">
+                Insertion Sort
+              </MenuItem>
             </NavDropdown>
           </Nav>
           <Nav>
