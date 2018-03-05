@@ -1,0 +1,26 @@
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+}
+.navbar-default {
+  background-color: mediumturquoise;
+  border-color: darkturquoise;
+}
+.navBrandItem {
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+}
+/*change font colour and size of navbar dropdown headings*/
+.navbar-default .navbar-nav > li > a {
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 18px;
+}
+/*change menu items css */
+.dropdown-menu > li > a {
+  font-size: 16px;
+  line-height: 35px;
+}

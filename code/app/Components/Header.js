@@ -15,10 +15,12 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <Navbar inverse collapseOnSelect>
+        <Navbar fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">Algo</a>
+              <a href="/">
+                <span className="navBrandItem"> Algo</span>
+              </a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>

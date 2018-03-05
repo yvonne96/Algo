@@ -2,7 +2,16 @@
   margin: 4px;
 }
 
+h1 {
+  color: darkred;
+  font-weight: bold;
+}
+
+h2 {
+  color: indianred;
+}
 body {
+  margin-top: 60px;
   background-color: lightgray;
 }
 
@@ -44,13 +53,6 @@ input[type="text"] {
   line-height: 250%;
 }
 
-.navbar {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0;
-}
-
 .box {
   display: flex;
   flex-direction: row;
@@ -90,7 +92,4 @@ input[type="text"] {
 .codeStyle {
   font-size: 15px;
   text-indent: 15px;
-}
-.tab {
-  margin-left: 20px;
 }
