@@ -8,7 +8,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class ConvexQ1 extends Component {
+export class ConvexQ1 extends Component {
   constructor(props) {
     super(props);
     this.height = 330;
@@ -16,6 +16,8 @@ class ConvexQ1 extends Component {
     this.nums = [];
     this.checked = false;
     this.correct = false;
+    this.refresh = this.refresh.bind(this);
+    this.checkAnswer = this.checkAnswer.bind(this);
   }
 
   componentDidMount() {
@@ -69,6 +71,7 @@ class ConvexQ1 extends Component {
             <p style={{ color: "red" }}>Incorrect please try again</p>
           )}
         <button
+          id="refreshBtn"
           className="button refreshBtn"
           onClick={() => {
             this.refresh();
@@ -77,6 +80,7 @@ class ConvexQ1 extends Component {
           <Glyphicon glyph="refresh">Reset</Glyphicon>
         </button>
         <button
+          id="submitBtn"
           className="button playBtn"
           onClick={() => {
             this.checkAnswer();
