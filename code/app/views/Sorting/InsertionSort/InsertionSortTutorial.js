@@ -17,14 +17,14 @@ class InsertionSortTutorial extends Component {
   initialState() {
     return {
       vars: {
-        i: 0,
+        i: 1,
         to_place: 0,
         pos: 0,
         numbers: []
       },
       programState: [
         {
-          text: <p>for i in range(len(l)):</p>,
+          text: <p>for i in range(1, len(l)):</p>,
           command: () => {
             this.checkForLoop();
           },
@@ -47,7 +47,7 @@ class InsertionSortTutorial extends Component {
         {
           text: (
             <p style={{ marginLeft: 30 }}>
-              while 0 &lt; pos and l[pos] > to_place:
+              while 0 &lt;= pos and l[pos] > to_place:
             </p>
           ),
           command: () => {
@@ -56,20 +56,23 @@ class InsertionSortTutorial extends Component {
           active: false
         },
         {
-          text: <p style={{ marginLeft: 90 }}>min_found = j</p>,
+          text: <p style={{ marginLeft: 60 }}>l[pos + 1] = l[pos]</p>,
           command: () => {
-            this.updateMin(4, "j");
+            this.updateList();
           },
           active: false
         },
         {
-          text: (
-            <p style={{ marginLeft: 30 }}>
-              [min_found], l[i] = l[i], l[min_found]
-            </p>
-          ),
+          text: <p style={{ marginLeft: 60 }}>pos -= 1</p>,
           command: () => {
-            this.swapNumbers();
+            this.decreasePos();
+          },
+          active: false
+        },
+        {
+          text: <p style={{ marginLeft: 30 }}>l[pos + 1] = to_place</p>,
+          command: () => {
+            this.fillPos();
           },
           active: false
         }
@@ -189,12 +192,43 @@ class InsertionSortTutorial extends Component {
     this.updateActiveProgram(3);
     let { vars } = Object.assign({}, this.state);
     if (
-      0 < vars.pos ||
+      0 <= vars.pos &&
       Number(vars.numbers[vars.pos][0].attr("number")) >
         Number(vars.numbers[vars.to_place][0].attr("number"))
     ) {
       this.updateQueue([4]);
+    } else {
+      this.updateQueue([6]);
     }
+  }
+
+  updateList() {
+    this.updateActiveProgram(4);
+    let { vars } = Object.assign({}, this.state);
+    vars.numbers[vars.pos][0]
+      .transition()
+      .attr("x", Number(vars.numbers[vars.pos][0].attr("x")) + 60)
+      .duration(this.tick);
+    vars.numbers[vars.pos][1]
+      .transition()
+      .attr("x", Number(vars.numbers[vars.pos][1].attr("x")) + 60)
+      .duration(this.tick);
+    this.setState({ vars });
+    this.updateQueue([5]);
+  }
+
+  decreasePos() {
+    this.updateActiveProgram(5);
+    let { vars } = Object.assign({}, this.state);
+    vars.pos--;
+    this.setState({ vars });
+    this.updateQueue([3]);
+  }
+
+  fillPos() {
+    this.updateActiveProgram(6);
+    let { vars } = Object.assign({}, this.state);
+    console.log(vars.pos);
   }
 
   updateMin(active, ij) {
