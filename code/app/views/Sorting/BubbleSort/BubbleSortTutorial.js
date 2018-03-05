@@ -291,7 +291,7 @@ export class BubbleSortTutorial extends Component {
         </div>
         <button
           id="createButton"
-          className="button"
+          className="button createBtn"
           onClick={() => {
             this.createRectangles();
           }}
@@ -300,7 +300,7 @@ export class BubbleSortTutorial extends Component {
         </button>
         <button
           id="playButton"
-          className="button"
+          className="button playBtn"
           onClick={() => {
             this.startClock();
           }}
@@ -309,7 +309,7 @@ export class BubbleSortTutorial extends Component {
         </button>
         <button
           id="pauseButton"
-          className="button  "
+          className="button pauseBtn"
           onClick={() => {
             this.stopClock();
           }}
@@ -318,7 +318,7 @@ export class BubbleSortTutorial extends Component {
         </button>
         <button
           id="slowButton"
-          className="button  "
+          className="button fastSlowBtn"
           onClick={() => {
             this.slow();
           }}
@@ -327,7 +327,7 @@ export class BubbleSortTutorial extends Component {
         </button>
         <button
           id="fastButton"
-          className="button  "
+          className="button fastSlowBtn"
           onClick={() => {
             this.fast();
           }}

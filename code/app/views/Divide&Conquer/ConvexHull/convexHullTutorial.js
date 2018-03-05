@@ -398,7 +398,7 @@ export class ConvexTutorial extends Component {
         <br />
         <button
           id="refreshButton"
-          className="button"
+          className="button refreshBtn"
           onClick={() => {
             this.refresh();
           }}
@@ -407,7 +407,7 @@ export class ConvexTutorial extends Component {
         </button>
         <button
           id="playButton"
-          className="button"
+          className="button playBtn"
           onClick={() => {
             this.startClock();
           }}
@@ -416,7 +416,7 @@ export class ConvexTutorial extends Component {
         </button>
         <button
           id="pauseButton"
-          className="button  "
+          className="button pauseBtn"
           onClick={() => {
             this.stopClock();
           }}
@@ -425,7 +425,7 @@ export class ConvexTutorial extends Component {
         </button>
         <button
           id="slowButton"
-          className="button  "
+          className="button fastSlowBtn"
           onClick={() => {
             this.slow();
           }}
@@ -434,7 +434,7 @@ export class ConvexTutorial extends Component {
         </button>
         <button
           id="fastButton"
-          className="button"
+          className="button fastSlowBtn"
           onClick={() => {
             this.fast();
           }}

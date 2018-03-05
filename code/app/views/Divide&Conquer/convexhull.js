@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import { Col, Grid, Row } from "react-bootstrap";
+import { Col, Glyphicon, Grid, Row } from "react-bootstrap";
 import ConvexQ1 from "./ConvexHull/ConvexHullQuestions/ConvexQ1";
 import ConvexQ2 from "./ConvexHull/ConvexHullQuestions/ConvexQ2";
 import ConvexQ3 from "./ConvexHull/ConvexHullQuestions/ConvexQ3";
@@ -69,22 +69,22 @@ class ConvexHull extends Component {
               <div className="content button-center">
                 {this.question > 0 && (
                   <button
-                    className="button"
+                    className="button fastSlowBtn"
                     onClick={() => {
                       this.updateQuestion(-1);
                     }}
                   >
-                    Prev
+                    <Glyphicon glyph="step-backward">Prev</Glyphicon>
                   </button>
                 )}
                 {this.question < 3 && (
                   <button
-                    className="button"
+                    className="button fastSlowBtn"
                     onClick={() => {
                       this.updateQuestion(1);
                     }}
                   >
-                    Next
+                    <Glyphicon glyph="step-forward">Next</Glyphicon>
                   </button>
                 )}
                 <br />
