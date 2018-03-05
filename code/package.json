@@ -58,6 +58,7 @@
     "webpack": "^3.5.5"
   },
   "devDependencies": {
+    "html-loader": "^0.5.5",
     "husky": "^0.14.3",
     "jshint": "^2.5.6",
     "lint-staged": "^6.1.1",
