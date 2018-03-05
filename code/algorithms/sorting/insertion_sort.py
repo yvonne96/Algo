@@ -1,9 +1,9 @@
 def insertion_sort(l):
 	for i in range(len(l)):
-		tmp = l[i]
-		curr = i - 1
-		while 0 <= curr and l[curr] > tmp:
-			l[curr + 1] = l[curr]
-			curr -= 1
-		l[curr + 1] = tmp
+		to_place = l[i]
+		pos = i - 1
+		while 0 <= pos and l[pos] > to_place:
+			l[pos + 1] = l[pos]
+			pos -= 1
+		l[pos + 1] = to_place
 	return l
