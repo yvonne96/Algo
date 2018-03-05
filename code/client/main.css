@@ -3,7 +3,7 @@
 }
 
 h1 {
-  color: darkred;
+  color: #c33c3c;
   font-weight: bold;
 }
 
@@ -71,9 +71,9 @@ input[type="text"] {
 .content {
   /*margin or padding: top,right,bottom,left*/
   margin: 45px 0px 0px 0px;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 20px 20px 30px;
   background-color: white;
-  text-indent: 20px;
+  text-indent: 10px;
   border-radius: 20px;
   box-shadow: 0 0 20px grey;
   line-height: 250%;
