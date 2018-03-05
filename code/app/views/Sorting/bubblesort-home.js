@@ -21,7 +21,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-class BubbleSortHome extends Component {
+export class BubbleSortHome extends Component {
   constructor(props) {
     super(props);
   }
