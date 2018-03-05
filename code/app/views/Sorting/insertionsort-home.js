@@ -6,9 +6,9 @@ import { Col, Grid, Row } from "react-bootstrap";
 import InsertionSortTutorial from "./InsertionSort/InsertionSortTutorial";
 
 import Page1 from "./InsertionSort/InsertionSortHtml/About.html";
-import Page2 from "./InsertionSort/InsertionSortHtml/Example.html";
-import Page3 from "./InsertionSort/InsertionSortHtml/Optimize.html";
-import Page4 from "./InsertionSort/InsertionSortHtml/QuickFacts.html";
+import Page2 from "./InsertionSort/InsertionSortHtml/QuickFacts.html";
+import Page3 from "./InsertionSort/InsertionSortHtml/Example.html";
+import Page4 from "./InsertionSort/InsertionSortHtml/Optimize.html";
 import Page5 from "./InsertionSort/InsertionSortHtml/Useful.html";
 
 var About = { __html: Page1 };
