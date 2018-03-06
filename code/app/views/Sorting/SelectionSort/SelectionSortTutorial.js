@@ -196,7 +196,7 @@ export class SelectionSortTutorial extends Component {
     } else {
       vars.min_found = vars.j - 1;
     }
-    this.fill(vars.numbers[vars.min_found][0], "red");
+    this.fill(vars.numbers[vars.min_found][0], "#ff728c");
     this.updateQueue([2]);
   }
 
