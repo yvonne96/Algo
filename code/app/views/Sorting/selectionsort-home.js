@@ -13,6 +13,9 @@ import Page4 from "./SelectionSort/selectionSortHtml/AnimationKey.html";
 import Page5 from "./SelectionSort/selectionSortHtml/Useful.html";
 
 import SelectionQ1 from "./SelectionSort/SelectionQuestions/SelectionQ1";
+import SelectionQ2 from "./SelectionSort/SelectionQuestions/SelectionQ2";
+import SelectionQ3 from "./SelectionSort/SelectionQuestions/SelectionQ3";
+import SelectionQ4 from "./SelectionSort/SelectionQuestions/SelectionQ4";
 
 var About = { __html: Page1 };
 var QuickFacts = { __html: Page2 };
@@ -89,9 +92,9 @@ class SelectionSortHome extends Component {
                 )}
                 <br />
                 {this.question == 0 && <SelectionQ1 className="Questions" />}
-                {this.question == 1 && <SelectionQ1 className="Questions" />}
-                {this.question == 2 && <SelectionQ1 className="Questions" />}
-                {this.question == 3 && <SelectionQ1 className="Questions" />}
+                {this.question == 1 && <SelectionQ2 className="Questions" />}
+                {this.question == 2 && <SelectionQ3 className="Questions" />}
+                {this.question == 3 && <SelectionQ4 className="Questions" />}
                 <br />
               </div>
             </Col>

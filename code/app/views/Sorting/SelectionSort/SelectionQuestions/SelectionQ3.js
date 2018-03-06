@@ -7,7 +7,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-export class SelectionQ1 extends Component {
+export class SelectionQ3 extends Component {
   constructor(props) {
     super(props);
     this.height = 70;
@@ -22,7 +22,7 @@ export class SelectionQ1 extends Component {
   }
 
   createRectangles() {
-    var nums = ["10", "11", "04", "05", "07", "08", "09"];
+    var nums = ["10", "11", "34", "25", "17", "90", "19"];
     d3.select("#Q").remove();
     this.svgContainerQ = d3
       .select("div.SelectionQ")
@@ -54,7 +54,14 @@ export class SelectionQ1 extends Component {
 
   checkAnswer() {
     this.checked = true;
-    if (document.getElementById("answer").value == "6") {
+    var nums = document
+      .getElementById("answer")
+      .value.trim()
+      .split(/\D+/);
+    if (
+      (nums[0] == "34" && nums[1] == "90") ||
+      (nums[0] == "90" && nums[1] == "34")
+    ) {
       this.correct = true;
     }
     this.forceUpdate();
@@ -71,7 +78,7 @@ export class SelectionQ1 extends Component {
   render() {
     return (
       <div>
-        <p>How many swaps are needed to sort these numbers?</p>
+        <p>Which 2 numbers will be swapped last?</p>
         <div className="SelectionQ" />
         <br />
         {this.checked &&
@@ -107,4 +114,4 @@ export class SelectionQ1 extends Component {
   }
 }
 
-export default mapStateToProps(SelectionQ1);
+export default mapStateToProps(SelectionQ3);
