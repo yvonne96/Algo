@@ -38,8 +38,8 @@ class Header extends Component {
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavDropdown title="Divide & Conquer" id="basic-nav-dropdown">
-              <MenuItem href="/divide&Conquer">Home</MenuItem>
+            <NavDropdown title="Computational Geometry" id="basic-nav-dropdown">
+              <MenuItem href="/computGeometry">Home</MenuItem>
               <MenuItem eventKey={3.1} href="/convexhull">
                 Convex Hull
               </MenuItem>

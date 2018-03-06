@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 
-import { DivideConquerHome } from "../../app/views/Divide&Conquer/divideConquerHome";
+import { DivideConquerHome } from "../../app/views/ComputationalGeometry/computGeometryHome";
 
 describe("Convex Hull Home Page", () => {
   it("renders", () => {

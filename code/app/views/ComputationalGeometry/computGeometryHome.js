@@ -4,18 +4,18 @@ import { Link, withRouter } from "react-router-dom";
 import { Col, Grid, Row } from "react-bootstrap";
 
 import Page1 from "./divideConquerHtml/About.html";
-import Page2 from "./divideConquerHtml/Advantages.html";
+import Page2 from "./divideConquerHtml/Types.html";
 import Page3 from "./divideConquerHtml/comparisons.html";
 
 var About = { __html: Page1 };
-var Advantages = { __html: Page2 };
+var Types = { __html: Page2 };
 var comparingAlgo = { __html: Page3 };
 
 const mapStateToProps = connect(state => {
   return state;
 });
 
-export class DivideConquerHome extends Component {
+export class ComputGeometryHome extends Component {
   constructor(props) {
     super(props);
   }
@@ -24,19 +24,13 @@ export class DivideConquerHome extends Component {
       <div>
         <Grid>
           <Row>
-            <Col md={4}>
+            <Col>
               <div className="content" dangerouslySetInnerHTML={About} />
-            </Col>
-            <Col md={8}>
-              <div className="content" dangerouslySetInnerHTML={Advantages} />
             </Col>
           </Row>
           <Row>
             <Col>
-              <div
-                className="content"
-                dangerouslySetInnerHTML={comparingAlgo}
-              />
+              <div className="content" dangerouslySetInnerHTML={Types} />
             </Col>
           </Row>
         </Grid>
@@ -44,4 +38,4 @@ export class DivideConquerHome extends Component {
     );
   }
 }
-export default mapStateToProps(withRouter(DivideConquerHome));
+export default mapStateToProps(withRouter(ComputGeometryHome));
