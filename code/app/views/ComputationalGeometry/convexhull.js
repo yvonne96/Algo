@@ -41,10 +41,10 @@ class ConvexHull extends Component {
       <div className="ConvexHull">
         <Grid>
           <Row>
-            <Col md={6}>
+            <Col md={7}>
               <div className="content" dangerouslySetInnerHTML={About} />
             </Col>
-            <Col md={6}>
+            <Col md={5}>
               <div className="content" dangerouslySetInnerHTML={Facts} />
             </Col>
           </Row>
@@ -54,13 +54,7 @@ class ConvexHull extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
-              <div className="content" dangerouslySetInnerHTML={Example} />
-            </Col>
-            <Col md={6}>
-              <div className="content" dangerouslySetInnerHTML={Optimize} />
-            </Col>
-            <Col md={6}>
+            <Col>
               <div className="content" dangerouslySetInnerHTML={Useful} />
             </Col>
           </Row>
