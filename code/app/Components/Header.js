@@ -45,6 +45,14 @@ class Header extends Component {
               </MenuItem>
             </NavDropdown>
           </Nav>
+          <Nav>
+            <NavDropdown title="Network Flow" id="basic-nav-dropdown">
+              <MenuItem href="/networkflow">Home</MenuItem>
+              <MenuItem eventKey={3.1} href="/bipartitematching">
+                Bipartite Matching
+              </MenuItem>
+            </NavDropdown>
+          </Nav>
         </Navbar>
       </div>
     );

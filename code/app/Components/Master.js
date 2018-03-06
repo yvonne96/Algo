@@ -15,6 +15,8 @@ import DivideConquerHome from "./../views/Divide&Conquer/divideConquerHome";
 import ConvexHull from "../views/Divide&Conquer/convexhull";
 import SelectionSortHome from "./../views/Sorting/selectionsort-home";
 import InsertionSortHome from "./../views/Sorting/insertionsort-home";
+import NetworkFlowHome from "./../views/NetworkFlow/networkFlowHome";
+import BipartiteMatching from "./../views/NetworkFlow/bipartiteMatchingHome";
 
 class Master extends Component {
   constructor(props) {
@@ -42,6 +44,12 @@ class Master extends Component {
             <Route exact path="/insertion" component={InsertionSortHome} />
             <Route exact path="/divide&Conquer" component={DivideConquerHome} />
             <Route exact path="/convexhull" component={ConvexHull} />
+            <Route exact path="/networkflow" component={NetworkFlowHome} />
+            <Route
+              exact
+              path="/bipartitematching"
+              component={BipartiteMatching}
+            />
             <Route component={NoMatch} />
           </Switch>
           <Footer />
