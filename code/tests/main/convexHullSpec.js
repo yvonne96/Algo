@@ -3,11 +3,11 @@ import { mount, shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 
-import { ConvexTutorial } from "../../app/views/Divide&Conquer/ConvexHull/convexHullTutorial";
-import { ConvexQ1 } from "../../app/views/Divide&Conquer/ConvexHull/ConvexHullQuestions/ConvexQ1";
-import { ConvexQ2 } from "../../app/views/Divide&Conquer/ConvexHull/ConvexHullQuestions/ConvexQ2";
-import { ConvexQ3 } from "../../app/views/Divide&Conquer/ConvexHull/ConvexHullQuestions/ConvexQ3";
-import { ConvexQ4 } from "../../app/views/Divide&Conquer/ConvexHull/ConvexHullQuestions/ConvexQ4";
+import { ConvexTutorial } from "../../app/views/ComputationalGeometry/ConvexHull/convexHullTutorial";
+import { ConvexQ1 } from "../../app/views/ComputationalGeometry/ConvexHull/ConvexHullQuestions/ConvexQ1";
+import { ConvexQ2 } from "../../app/views/ComputationalGeometry/ConvexHull/ConvexHullQuestions/ConvexQ2";
+import { ConvexQ3 } from "../../app/views/ComputationalGeometry/ConvexHull/ConvexHullQuestions/ConvexQ3";
+import { ConvexQ4 } from "../../app/views/ComputationalGeometry/ConvexHull/ConvexHullQuestions/ConvexQ4";
 
 describe("Convex Hull Page, ", () => {
   it("renders", () => {

@@ -11,8 +11,8 @@ import Footer from "./Footer";
 import Home from "./../views/Home/index";
 import SortingHome from "./../views/Sorting/Sorting-home";
 import BubbleSortHome from "./../views/Sorting/bubblesort-home";
-import DivideConquerHome from "./../views/Divide&Conquer/divideConquerHome";
-import ConvexHull from "../views/Divide&Conquer/convexhull";
+import ComputGeometryHome from "../views/ComputationalGeometry/computGeometryHome";
+import ConvexHull from "../views/ComputationalGeometry/convexhull";
 import SelectionSortHome from "./../views/Sorting/selectionsort-home";
 import InsertionSortHome from "./../views/Sorting/insertionsort-home";
 import NetworkFlowHome from "./../views/NetworkFlow/networkFlowHome";
@@ -42,7 +42,11 @@ class Master extends Component {
             <Route exact path="/bubble" component={BubbleSortHome} />
             <Route exact path="/selection" component={SelectionSortHome} />
             <Route exact path="/insertion" component={InsertionSortHome} />
-            <Route exact path="/divide&Conquer" component={DivideConquerHome} />
+            <Route
+              exact
+              path="/computGeometry"
+              component={ComputGeometryHome}
+            />
             <Route exact path="/convexhull" component={ConvexHull} />
             <Route exact path="/networkflow" component={NetworkFlowHome} />
             <Route
