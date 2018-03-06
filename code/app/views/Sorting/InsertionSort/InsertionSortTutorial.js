@@ -132,6 +132,9 @@ export class InsertionSortTutorial extends Component {
         this.forceUpdate();
         return;
       }
+      if (nums[i].length == 1) {
+        nums[i] = "0" + nums[i];
+      }
     }
     vars.numbers = [];
     d3.select("svg").remove();
@@ -153,7 +156,7 @@ export class InsertionSortTutorial extends Component {
           .attr("number", nums[i]),
         svgContainer
           .append("text")
-          .attr("x", i * 60 + 55)
+          .attr("x", i * 60 + 50)
           .attr("y", 25)
           .attr("dy", ".35em")
           .style("font-size", "25px")
@@ -211,7 +214,7 @@ export class InsertionSortTutorial extends Component {
   updateToPlace() {
     this.updateActiveProgram(1);
     let { vars } = Object.assign({}, this.state);
-    this.fill(vars.numbers[vars.i][0], "red");
+    this.fill(vars.numbers[vars.i][0], "#ff728c");
     vars.to_place = vars.i;
     this.setState({ vars });
     this.updateQueue([2]);

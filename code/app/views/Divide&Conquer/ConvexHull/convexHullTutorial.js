@@ -221,15 +221,6 @@ export class ConvexTutorial extends Component {
       .attr("stroke-width", 3);
   }
 
-  placePoint(point) {
-    this.svgContainerQ
-      .append("circle")
-      .attr("cx", point[0])
-      .attr("cy", point[1])
-      .attr("r", 5);
-    this.nums.push([point[0], this.height - point[1]]);
-  }
-
   updatePreviousLine() {
     let vars = Object.assign({}, this.state).vars;
     vars.lines[vars.lines.length - 1].attr("stroke", "black");
