@@ -1,18 +1,9 @@
 image: python
 
-cache:
-  paths:
-    - node_modules/
-
 before_script:
   - apt update
   - pip3 install -r requirements.txt
-  - cd code
-  - npm install
-  - cd
 
 test:
   script:
     - python3 -m unittest discover -v
-    - cd code
-    - npm test
