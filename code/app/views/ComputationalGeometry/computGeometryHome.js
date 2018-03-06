@@ -5,11 +5,9 @@ import { Col, Grid, Row } from "react-bootstrap";
 
 import Page1 from "./computGeometryHtml/About.html";
 import Page2 from "./computGeometryHtml/Types.html";
-import Page3 from "./computGeometryHtml/comparisons.html";
 
 var About = { __html: Page1 };
 var Types = { __html: Page2 };
-var comparingAlgo = { __html: Page3 };
 
 const mapStateToProps = connect(state => {
   return state;
