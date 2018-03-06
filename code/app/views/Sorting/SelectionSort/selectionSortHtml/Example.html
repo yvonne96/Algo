@@ -1,1 +1,33 @@
 <h2>Step by Step Example</h2>
+<p>lets take the array "1 4 2 3" as our example.</p>
+
+<p><i style="color: purple">Purple</i> : num is array[i] and min_found</p>
+<p><i style="color: red">Red</i> : min_found</p>
+<p><i style="color: blue">Blue</i> : array[i]</p>
+<p><i style="color: orange">Orange</i> : array[j]</p>
+
+
+
+<p><b>First Iteration</b></p>
+<pre>(<i style="color: purple">1</i> <i style="color: orange">4</i> 2 3)
+   ...
+ (<i style="color: purple">1</i> 4 2 3)  since 1 is the smallest it doesn't change</pre>
+
+
+<p><b>Second Iteration</b></p>
+
+<pre>(1 <i style="color: purple">4</i> <i style="color: orange">2</i> 3)
+
+ (1 <i style="color: blue">4</i> <i style="color: red">2</i> <i style="color: orange">3</i>)
+
+ (1 <i style="color: purple">2</i> 4 3) 2 is the smallest so it swaps with 4 </pre>
+
+<p><b>Third Iteration</b></p>
+
+<pre>(1 2 <i style="color: purple">4</i> 3)
+
+ (1 2 <i style="color: blue">4</i> <i style="color: red">3</i>)
+
+ (1 2 <i style="color: purple">3</i> 4) 3 is the smallest so it swaps with 4 </pre>
+
+<p>So in the end, the sorted array is "1 2 3 4"</p>
