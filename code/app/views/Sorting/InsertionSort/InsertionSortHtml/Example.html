@@ -1,0 +1,43 @@
+<h2>Step by Step Example</h2>
+<p>let us take the example "4627" as our example</p>
+<p><b>First Iteration</b></p>
+<p>
+<pre>
+       <b>lst</b>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (4 _ <b>6</b> 2 7)     <i>6 is the first element
+                      to be positioned</i>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (4 <b>6</b> _ 2 7)     <i>since 4 is less than 6,
+                      6 is positioned in
+                       the blank spot</i>
+</pre>
+<p><b>Second Iteration</b></p>
+<p>
+<pre>
+      <span class="glyphicon glyphicon-arrow-down"></span>
+    (4 6 _ <b>2</b> 7)     <i>2 is the next element
+                      to be positioned</i>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (4 _ 6 <b>2</b> 7)     <i>since 6 is not less than 2
+                     the blank moves left</i>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (_ 4 6 <b>2</b> 7)     <i>since 4 is not less than 2
+                     the blank moves left again</i>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (<b>2</b> 4 6 _ 7)     <i>since we are at the end of
+                     the list 2 is placed in
+                        the blanks spot</i>
+</pre>
+<p><b>Third Iteration</b></p>
+<p>
+<pre>
+      <span class="glyphicon glyphicon-arrow-down"></span>
+    (2 4 6 _ <b>7</b>)    <i>7 is the next element
+                      to be positioned</i>
+       <span class="glyphicon glyphicon-arrow-down"></span>
+    (2 4 6 <b>7</b> _)    <i>since 6 is less than 7,
+                      7 is positioned in
+                       the blank spot</i>
+</pre>
+</p>

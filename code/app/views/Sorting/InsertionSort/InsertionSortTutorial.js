@@ -361,7 +361,7 @@ export class InsertionSortTutorial extends Component {
         </div>
         <button
           id="createBtn"
-          className="button"
+          className="button createBtn"
           onClick={() => {
             this.createRectangles();
           }}
@@ -370,7 +370,7 @@ export class InsertionSortTutorial extends Component {
         </button>
         <button
           id="playBtn"
-          className="button"
+          className="button playBtn"
           onClick={() => {
             this.startClock();
           }}
@@ -379,7 +379,7 @@ export class InsertionSortTutorial extends Component {
         </button>
         <button
           id="pauseBtn"
-          className="button  "
+          className="button pauseBtn"
           onClick={() => {
             this.stopClock();
           }}
@@ -388,7 +388,7 @@ export class InsertionSortTutorial extends Component {
         </button>
         <button
           id="slowBtn"
-          className="button  "
+          className="button fastSlowBtn"
           onClick={() => {
             this.slow();
           }}
@@ -397,7 +397,7 @@ export class InsertionSortTutorial extends Component {
         </button>
         <button
           id="fastBtn"
-          className="button  "
+          className="button fastSlowBtn"
           onClick={() => {
             this.fast();
           }}

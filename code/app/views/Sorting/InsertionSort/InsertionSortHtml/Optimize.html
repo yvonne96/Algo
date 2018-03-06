@@ -1,0 +1,48 @@
+<h2>Optimizing Insertion Sort</h2>
+<p>Insertion sort is implemented as follows.</p>
+<code><pre>i ← 1
+while i < length(A)
+    j ← i
+    while j > 0 and A[j-1] > A[j]
+        swap A[j] and A[j-1]
+        j ← j - 1
+    end while
+    i ← i + 1
+end while</pre></code>
+<p>The outer loop runs over all the elements except the first one (would be trivial to include it),
+    Elements from <i>i+1</i> are sorted. The inner loop moves element A[i] to its correct place so that after the loop,
+    the first i+2 elements are sorted.
+</p>
+<p>
+    After expanding the swap operation in-place as x ← A[j]; A[j] ← A[j-1]; A[j-1] ← x (where x is a temporary variable),
+    a slightly faster version can be produced that moves A[i] to its position in one go and only performs one assignment
+    in the inner loop body:[2]
+</p>
+
+<code><pre>i ← 1
+while i < length(A)
+    x ← A[i]
+    j ← i - 1
+    while j >= 0 and A[j] > x
+        A[j+1] ← A[j]
+        j ← j - 1
+    end while
+    A[j+1] ← x[4]
+    i ← i + 1
+end while</pre></code>
+
+<p>The new inner loop shifts elements to the right to clear a spot for x = A[i].</p>
+
+<p>It can also be implemented recursively</p>
+<pre><code> function insertionSortR(array A, int n)
+     if n>0
+        insertionSortR(A,n-1)
+        x ← A[n]
+        j ← n-1
+        while j >= 0 and A[j] > x
+            A[j+1] ← A[j]
+            j ← j-1
+        end while
+        A[j+1] ← x
+     end if
+ end function</code></pre>
