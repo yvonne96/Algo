@@ -21,7 +21,7 @@ export class SortingHome extends Component {
   }
   render() {
     return (
-      <div className="SortingHome">
+      <div>
         <Grid>
           <Row>
             <Col md={6}>
