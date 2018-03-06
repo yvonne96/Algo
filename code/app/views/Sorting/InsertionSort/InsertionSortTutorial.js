@@ -362,6 +362,7 @@ export class InsertionSortTutorial extends Component {
             })}
           </div>
         </div>
+        <br />
         <button
           id="createBtn"
           className="button createBtn"
