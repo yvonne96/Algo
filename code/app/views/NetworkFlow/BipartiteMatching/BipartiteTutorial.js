@@ -195,15 +195,6 @@ export class BipartiteTutorial extends Component {
         </div>
         <br />
         <button
-          id="refreshButton"
-          className="button refreshBtn"
-          onClick={() => {
-            this.refresh();
-          }}
-        >
-          <Glyphicon glyph="refresh" />
-        </button>
-        <button
           id="playButton"
           className="button playBtn"
           onClick={() => {
