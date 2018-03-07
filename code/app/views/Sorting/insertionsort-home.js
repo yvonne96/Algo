@@ -11,6 +11,7 @@ import Page2 from "./InsertionSort/InsertionSortHtml/QuickFacts.html";
 import Page3 from "./InsertionSort/InsertionSortHtml/Example.html";
 import Page4 from "./InsertionSort/InsertionSortHtml/Optimize.html";
 import Page5 from "./InsertionSort/InsertionSortHtml/Useful.html";
+import Page6 from "./InsertionSort/InsertionSortHtml/Key.html";
 
 import InsertionQ1 from "./InsertionSort/InsertionSortQuestions/InsertionQ1";
 import InsertionQ2 from "./InsertionSort/InsertionSortQuestions/InsertionQ2";
@@ -22,6 +23,7 @@ var QuickFacts = { __html: Page2 };
 var Example = { __html: Page3 };
 var Optimize = { __html: Page4 };
 var Useful = { __html: Page5 };
+var Key = { __html: Page6 };
 
 const mapStateToProps = connect(state => {
   return state;
@@ -45,6 +47,7 @@ class InsertionSortHome extends Component {
           <Row>
             <Col md={6}>
               <div className="content" dangerouslySetInnerHTML={About} />
+              <div className="content" dangerouslySetInnerHTML={Key} />
             </Col>
             <Col md={6}>
               <div className="content" dangerouslySetInnerHTML={QuickFacts} />
