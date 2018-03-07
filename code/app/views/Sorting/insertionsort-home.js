@@ -56,14 +56,14 @@ class InsertionSortHome extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={7}>
-              <div className="content" dangerouslySetInnerHTML={Optimize} />
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Example} />
             </Col>
-            <Col md={5}>
+            <Col md={6}>
               <div className="content" dangerouslySetInnerHTML={Useful} />
             </Col>
-            <Col md={5}>
-              <div className="content" dangerouslySetInnerHTML={Example} />
+            <Col md={6}>
+              <div className="content" dangerouslySetInnerHTML={Optimize} />
             </Col>
           </Row>
           <Row>
