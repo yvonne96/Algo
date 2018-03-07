@@ -17,6 +17,7 @@ body {
 
 p {
   font-size: 20px;
+  text-indent: 0px;
 }
 
 .button {
@@ -128,4 +129,15 @@ th {
   text-indent: 0px;
   font-size: 18px;
   line-height: 250%;
+}
+.glyphicon-ok {
+  text-indent: 15px;
+  word-spacing: 1px;
+  line-height: 260%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.glyphicon-ok:before {
+  content: "\e013";
+  margin-right: 20px;
+  color: indianred;
 }
