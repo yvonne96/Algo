@@ -6,8 +6,8 @@ cache:
 
 test_letslearn:
   script:
-    - npm install
     - cd code
+    - npm install
     - npm test
 # before_script:
 #   - apt update
