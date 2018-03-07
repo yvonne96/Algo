@@ -1,18 +1,24 @@
-image: node:latest
-
-cache:
-  paths:
-    - node_modules/
-
-test_letslearn:
-  script:
-    - cd code
-    - npm install
-    - npm test
-# before_script:
-#   - apt update
-#   - pip3 install -r requirements.txt
-
-# test:
-#   script:
-#     - python3 -m unittest discover -v
+build: python:
+    image: python
+    
+    before_script:
+      - apt update
+      - pip3 install -r requirements.txt
+    
+    test:
+      script:
+        - python3 -m unittest discover -v
+    
+build: node:    
+    image: node:latest
+    
+    cache:
+      paths:
+        - node_modules/
+    
+    test_letslearn:
+      script:
+        - cd code
+        - npm install
+        - npm test
+        
