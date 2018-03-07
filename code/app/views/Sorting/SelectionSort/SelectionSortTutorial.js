@@ -124,6 +124,9 @@ export class SelectionSortTutorial extends Component {
         this.forceUpdate();
         return;
       }
+      if (nums[i].length == 1) {
+        nums[i] = "0" + nums[i];
+      }
     }
     vars.numbers = [];
     d3.select("svg").remove();
@@ -145,7 +148,7 @@ export class SelectionSortTutorial extends Component {
           .attr("number", nums[i]),
         svgContainer
           .append("text")
-          .attr("x", i * 60 + 55)
+          .attr("x", i * 60 + 50)
           .attr("y", 25)
           .attr("dy", ".35em")
           .style("font-size", "25px")
@@ -321,6 +324,7 @@ export class SelectionSortTutorial extends Component {
             })}
           </div>
         </div>
+        <br />
         <button
           id="createBtn"
           className="button createBtn"

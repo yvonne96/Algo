@@ -59,7 +59,7 @@ export class BipartiteTutorial extends Component {
       this.points.push(
         this.svgContainer
           .append("circle")
-          .attr("cx", 620)
+          .attr("cx", 670)
           .attr("cy", i * 80 + 50)
           .attr("r", 5)
           .attr("matched", false)
@@ -285,7 +285,7 @@ export class BipartiteTutorial extends Component {
         <br />
         <button
           id="refreshButton"
-          className="button"
+          className="button refreshBtn"
           onClick={() => {
             this.refresh();
           }}
@@ -294,7 +294,7 @@ export class BipartiteTutorial extends Component {
         </button>
         <button
           id="playButton"
-          className="button"
+          className="button playBtn"
           onClick={() => {
             this.drawFlow();
           }}
@@ -303,7 +303,7 @@ export class BipartiteTutorial extends Component {
         </button>
         <button
           id="pauseButton"
-          className="button  "
+          className="button pauseBtn"
           onClick={() => {
             this.stopClock();
           }}
@@ -311,8 +311,8 @@ export class BipartiteTutorial extends Component {
           <Glyphicon glyph="pause" />
         </button>
         <button
-          id="slowButton"
-          className="button  "
+          id="fastButton"
+          className="button fastSlowBtn"
           onClick={() => {
             this.slow();
           }}
@@ -321,7 +321,7 @@ export class BipartiteTutorial extends Component {
         </button>
         <button
           id="fastButton"
-          className="button"
+          className="button fastSlowBtn"
           onClick={() => {
             this.fast();
           }}
