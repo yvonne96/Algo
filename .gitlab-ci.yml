@@ -1,4 +1,4 @@
-build: python:
+build:python:
     image: python
     
     before_script:
@@ -9,7 +9,7 @@ build: python:
       script:
         - python3 -m unittest discover -v
     
-build: node:    
+build:node:    
     image: node:latest
     
     cache:
