@@ -1,21 +1,17 @@
-build:python:
+before_script:
+    - apt update
+    - pip3 install -r requirements.txt
+
+test:1.1
     image: python
-    
-    before_script:
-      - apt update
-      - pip3 install -r requirements.txt
-    
-    test:
-      script:
+    script:
         - python3 -m unittest discover -v
     
-build:node:    
+test:1.2   
     image: node:latest
-    
     cache:
       paths:
         - node_modules/
-    
     test_letslearn:
       script:
         - cd code
