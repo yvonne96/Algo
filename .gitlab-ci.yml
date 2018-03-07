@@ -1,11 +1,11 @@
-test:algorithm:
+test: Algorithm:
     image: python
     script:
         - apt update
         - pip3 install -r requirements.txt
         - python3 -m unittest discover -v
     
-test:main:   
+test: Main:   
     image: node:latest
     cache:
       paths:
