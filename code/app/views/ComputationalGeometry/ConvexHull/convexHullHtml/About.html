@@ -1,3 +1,14 @@
 <h1><b>Convex Hull</b></h1>
 <br/>
-<p><i>description on convex hull here</i></p>
+<p>The Convex Hull of a set of points <i>(Y)</i> in a certain space <i>(S)</i>,
+    is the smallest subset of <i>S</i> that contains Y. In other words,
+    it's like enclosing a rubber band around Y and the shape that it makes is the convex hull.
+    <br/>
+    <br/>There are many different algorithms that implement a convex hull for example Chan's algorithm
+    , Graham scan, Quickhull etc. In our animation we will be using the monotone chain convex Hull
+    algorithm. Monotone chain constructs the convex hull in 2D space.It does this by sorting the points
+    by the x co-ordinate (if both points have the same x coordinate, it sorts by the y coordinate) and
+    then it constructs lower and upper hulls. Upper hull,in our animation, is the path from the leftmost point to the
+    rightmost point in clockwise order. Lower hull is the remaining path in the convex hull.
+</p>
+

@@ -119,7 +119,13 @@ th {
   color: indianred;
 }
 
-.comput {
+.types {
   font-size: 20px;
+  line-height: 250%;
+  text-indent: 0px;
+}
+.comput {
+  text-indent: 0px;
+  font-size: 18px;
   line-height: 250%;
 }

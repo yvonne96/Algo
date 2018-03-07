@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import { Col, Grid, Row } from "react-bootstrap";
 
-import Page1 from "./divideConquerHtml/About.html";
-import Page2 from "./divideConquerHtml/Types.html";
-import Page3 from "./divideConquerHtml/comparisons.html";
+import Page1 from "./computGeometryHtml/About.html";
+import Page2 from "./computGeometryHtml/Types.html";
 
 var About = { __html: Page1 };
 var Types = { __html: Page2 };
-var comparingAlgo = { __html: Page3 };
 
 const mapStateToProps = connect(state => {
   return state;

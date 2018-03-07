@@ -11,15 +11,11 @@ import ConvexTutorial from "./ConvexHull/convexHullTutorial";
 
 import Page1 from "./ConvexHull/convexHullHtml/About.html";
 import Page2 from "./ConvexHull/convexHullHtml/Quick Facts.html";
-import Page3 from "./ConvexHull/convexHullHtml/Example.html";
-import Page4 from "./ConvexHull/convexHullHtml/Optimize.html";
-import Page5 from "./ConvexHull/convexHullHtml/Useful.html";
+import Page3 from "./ConvexHull/convexHullHtml/Useful.html";
 
 var About = { __html: Page1 };
 var Facts = { __html: Page2 };
-var Example = { __html: Page3 };
-var Optimize = { __html: Page4 };
-var Useful = { __html: Page5 };
+var Useful = { __html: Page3 };
 
 const mapStateToProps = connect(state => {
   return state;
@@ -41,10 +37,10 @@ class ConvexHull extends Component {
       <div className="ConvexHull">
         <Grid>
           <Row>
-            <Col md={6}>
+            <Col md={7}>
               <div className="content" dangerouslySetInnerHTML={About} />
             </Col>
-            <Col md={6}>
+            <Col md={5}>
               <div className="content" dangerouslySetInnerHTML={Facts} />
             </Col>
           </Row>
@@ -54,13 +50,7 @@ class ConvexHull extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
-              <div className="content" dangerouslySetInnerHTML={Example} />
-            </Col>
-            <Col md={6}>
-              <div className="content" dangerouslySetInnerHTML={Optimize} />
-            </Col>
-            <Col md={6}>
+            <Col>
               <div className="content" dangerouslySetInnerHTML={Useful} />
             </Col>
           </Row>

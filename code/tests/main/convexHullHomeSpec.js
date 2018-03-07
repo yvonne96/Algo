@@ -3,22 +3,25 @@ import { mount, shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 
-import { DivideConquerHome } from "../../app/views/ComputationalGeometry/computGeometryHome";
+import { ComputGeometryHome } from "../../app/views/ComputationalGeometry/computGeometryHome";
 
 describe("Convex Hull Home Page", () => {
   it("renders", () => {
-    shallow(<DivideConquerHome />);
+    shallow(<ComputGeometryHome />);
   });
 
   describe("html page render", () => {
     let convex, node;
     beforeEach(() => {
-      convex = renderIntoDocument(<DivideConquerHome />);
+      convex = renderIntoDocument(<ComputGeometryHome />);
       node = findDOMNode(convex);
     });
 
     it("About html page", () => {
       expect(node.textContent).toContain("Home");
+    });
+    it("Type html page", () => {
+      expect(node.textContent).toContain("Type");
     });
   });
 });
