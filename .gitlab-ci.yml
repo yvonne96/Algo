@@ -1,10 +1,8 @@
-before_script:
-    - apt update
-    - pip3 install -r requirements.txt
-
 test:1.1:
     image: python
     script:
+        - apt update
+        - pip3 install -r requirements.txt
         - python3 -m unittest discover -v
     
 test:1.2:   
