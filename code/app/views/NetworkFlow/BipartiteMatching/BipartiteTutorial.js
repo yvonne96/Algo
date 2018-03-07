@@ -19,7 +19,6 @@ export class BipartiteTutorial extends Component {
     this.edges = [];
     this.points = [];
     this.found = false;
-    this.seen = [];
     this.tmppath = [];
     this.network = {};
     this.height = 400;
@@ -51,7 +50,7 @@ export class BipartiteTutorial extends Component {
           .append("circle")
           .attr("cx", 420)
           .attr("cy", i * 80 + 50)
-          .attr("r", 5)
+          .attr("r", 8)
           .attr("matched", false)
       );
     }
@@ -61,7 +60,7 @@ export class BipartiteTutorial extends Component {
           .append("circle")
           .attr("cx", 670)
           .attr("cy", i * 80 + 50)
-          .attr("r", 5)
+          .attr("r", 8)
           .attr("matched", false)
       );
     }
@@ -73,10 +72,9 @@ export class BipartiteTutorial extends Component {
       [0, 7],
       [1, 5],
       [2, 6],
-      [2, 7],
+      [2, 8],
       [3, 6],
       [3, 9],
-      [4, 8],
       [4, 9]
     ];
     for (var i = 0; i < 10; i++) {
@@ -104,173 +102,86 @@ export class BipartiteTutorial extends Component {
     }
   }
 
-  async findPath(current) {
-    if (this.found) {
-      return;
-    }
-    if (current > 4 && this.points[current].attr("matched") == "false") {
-      this.points[current].attr("matched", true);
-      this.points[current].style("fill", "#42f44b");
-      this.found = true;
-      await delay(1000);
-      return;
-    }
-
-    for (var i = 0; i < this.network[current].length; i++) {
-      var edge = this.network[current][i];
-      if (this.found) {
-        return;
-      }
-
-      if (
-        current < 5 &&
-        edge.attr("matched") == "false" &&
-        !this.seen.includes(edge)
-      ) {
-        this.network[current][i].attr("matched", true);
-        this.tmppath.push(edge);
-        this.seen.push(edge);
-        this.network[current][i].style("stroke", "#42f44b");
-        await delay(1000);
-        this.findPath(Number(edge.attr("v")));
-        await delay(2000);
-      }
-      if (
-        current > 4 &&
-        edge.attr("matched") == "true" &&
-        !this.seen.includes(edge)
-      ) {
-        this.network[current][i].attr("matched", false);
-        this.seen.push(edge);
-        this.tmppath.push(edge);
-        this.network[current][i].style("stroke", "black");
-        await delay(1000);
-        this.findPath(Number(edge.attr("u")));
-        await delay(2000);
-      }
-      if (!this.found && this.tmppath.length > 0) {
-        if (this.tmppath[this.tmppath.length - 1].attr("matched") == "true") {
-          this.tmppath[this.tmppath.length - 1].attr("matched", false);
-          this.tmppath[this.tmppath.length - 1].style("stroke", "black");
-          await delay(1000);
-        } else {
-          this.tmppath[this.tmppath.length - 1].attr("matched", true);
-          this.tmppath[this.tmppath.length - 1].attr("matched", "#42f44b");
-          await delay(1000);
-        }
-        this.tmppath.pop();
-      }
-    }
-  }
-
   async findFlow() {
     this.found = false;
     for (var i = 0; i < 5; i++) {
       if (this.points[i].attr("matched") == "false") {
-        this.seen = [];
         this.tmppath = [];
         this.points[i].style("fill", "#42f44b");
         await delay(1000);
-        this.findPath(i);
-        await delay(10000);
-        if (this.found) {
-          this.points[i].attr("matched", true);
-          break;
-        } else {
+        var current = i;
+        var path = [current];
+        var seen = [];
+        var added = false;
+        while (path.length != 0) {
+          added = false;
+          var current = path[path.length - 1];
+          for (var j = 0; j < this.network[current].length; j++) {
+            var edge = this.network[current][j];
+            if (
+              current < 5 &&
+              edge.attr("matched") == "false" &&
+              !seen.includes(edge) &&
+              !added
+            ) {
+              this.network[current][j].attr("matched", true);
+              this.tmppath.push([current, j]);
+              seen.push(edge);
+              this.network[current][j].style("stroke", "#42f44b");
+              await delay(1000);
+              path.push(Number(edge.attr("v")));
+              added = true;
+            }
+            if (
+              current > 4 &&
+              edge.attr("matched") == "true" &&
+              !seen.includes(edge) &&
+              !added
+            ) {
+              this.network[current][j].attr("matched", false);
+              seen.push(edge);
+              this.tmppath.push([current, j]);
+              this.network[current][j].style("stroke", "black");
+              await delay(1000);
+              path.push(Number(edge.attr("u")));
+              added = true;
+            }
+          }
+
+          if (!added && path.length > 1) {
+            current = this.tmppath[this.tmppath.length - 1][0];
+            j = this.tmppath[this.tmppath.length - 1][1];
+            if (this.network[current][j].attr("matched") == "true") {
+              this.network[current][j].attr("matched", false);
+              this.network[current][j].style("stroke", "black");
+              await delay(1000);
+            } else {
+              this.network[current][j].attr("matched", true);
+              this.network[current][j].attr("stroke", "#42f44b");
+              await delay(1000);
+            }
+            this.tmppath.pop();
+          }
+          if (!added) {
+            path.pop();
+          }
+
+          if (
+            path.length % 2 == 0 &&
+            this.points[path[path.length - 1]].attr("matched") == "false"
+          ) {
+            this.points[path[path.length - 1]].attr("matched", true);
+            this.points[path[path.length - 1]].style("fill", "#42f44b");
+            this.found = true;
+            await delay(1000);
+            path = [];
+          }
+        }
+        if (!this.found) {
           this.points[i].style("fill", "black");
         }
       }
     }
-    if (this.found) {
-      this.findFlow();
-    }
-  }
-
-  colourPoint(point) {
-    point.style("fill", "#42f44b");
-  }
-
-  colourEdge(edge) {
-    if (edge.attr("matched") == "true") {
-      edge.attr("matched", false);
-      edge.style("stroke", "black");
-    } else {
-      edge.attr("matched", true);
-      edge.style("stroke", "#42f44b");
-    }
-  }
-
-  async drawFlow() {
-    this.colourPoint(this.points[0]);
-    await delay(1000);
-    this.colourEdge(this.network[0][0]);
-    await delay(1000);
-    this.colourPoint(this.points[5]);
-    await delay(1000);
-    this.colourPoint(this.points[1]);
-    await delay(1000);
-    this.colourEdge(this.network[1][0]);
-    await delay(1000);
-    this.colourEdge(this.network[0][0]);
-    await delay(1000);
-    this.colourEdge(this.network[0][1]);
-    await delay(1000);
-    this.colourPoint(this.points[7]);
-    await delay(1000);
-    this.colourPoint(this.points[2]);
-    await delay(1000);
-    this.colourEdge(this.network[2][0]);
-    await delay(1000);
-    this.colourPoint(this.points[6]);
-    await delay(1000);
-    this.colourPoint(this.points[3]);
-    await delay(1000);
-    this.colourEdge(this.network[3][0]);
-    await delay(1000);
-    this.colourEdge(this.network[2][0]);
-    await delay(1000);
-    this.colourEdge(this.network[2][1]);
-    await delay(1000);
-    this.colourEdge(this.network[0][1]);
-    await delay(1000);
-    this.colourEdge(this.network[0][0]);
-    await delay(1000);
-    this.colourEdge(this.network[1][0]);
-    await delay(1000);
-    this.colourEdge(this.network[1][0]);
-    await delay(1000);
-    this.colourEdge(this.network[0][0]);
-    await delay(1000);
-    this.colourEdge(this.network[0][1]);
-    await delay(1000);
-    this.colourEdge(this.network[2][1]);
-    await delay(1000);
-    this.colourEdge(this.network[2][0]);
-    await delay(1000);
-    this.colourEdge(this.network[3][0]);
-    await delay(1000);
-    this.colourEdge(this.network[3][1]);
-    await delay(1000);
-    this.colourPoint(this.points[9]);
-    await delay(1000);
-    this.colourPoint(this.points[4]);
-    await delay(1000);
-    this.colourEdge(this.network[4][0]);
-    await delay(1000);
-    this.colourPoint(this.points[8]);
-    await delay(1000);
-  }
-
-  slow() {
-    this.tick *= 2;
-    this.stopClock();
-    this.startClock();
-  }
-
-  fast() {
-    this.tick /= 2;
-    this.stopClock();
-    this.startClock();
   }
 
   render() {
@@ -296,37 +207,10 @@ export class BipartiteTutorial extends Component {
           id="playButton"
           className="button playBtn"
           onClick={() => {
-            this.drawFlow();
+            this.findFlow();
           }}
         >
           <Glyphicon glyph="play" />
-        </button>
-        <button
-          id="pauseButton"
-          className="button pauseBtn"
-          onClick={() => {
-            this.stopClock();
-          }}
-        >
-          <Glyphicon glyph="pause" />
-        </button>
-        <button
-          id="fastButton"
-          className="button fastSlowBtn"
-          onClick={() => {
-            this.slow();
-          }}
-        >
-          <Glyphicon glyph="fast-backward" />
-        </button>
-        <button
-          id="fastButton"
-          className="button fastSlowBtn"
-          onClick={() => {
-            this.fast();
-          }}
-        >
-          <Glyphicon glyph="fast-forward" />
         </button>
         <br />
       </div>
