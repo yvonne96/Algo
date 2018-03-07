@@ -12,8 +12,7 @@ test:1.2:
     cache:
       paths:
         - node_modules/
-    test_letslearn:
-      script:
+    script:
         - cd code
         - npm install
         - npm test
