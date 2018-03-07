@@ -8,7 +8,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-export class BipartiteQ1 extends Component {
+export class BipartiteQ3 extends Component {
   constructor(props) {
     super(props);
     this.height = 400;
@@ -24,7 +24,7 @@ export class BipartiteQ1 extends Component {
 
   checkAnswer() {
     this.checked = true;
-    if (document.getElementById("answer").value == "5") {
+    if (document.getElementById("answer").value == "4") {
       this.correct = true;
     }
     this.forceUpdate();
@@ -33,16 +33,7 @@ export class BipartiteQ1 extends Component {
   refresh() {
     this.checked = false;
     this.correct = false;
-    var edges = [
-      [0, 5],
-      [0, 7],
-      [1, 5],
-      [2, 6],
-      [2, 8],
-      [3, 6],
-      [3, 9],
-      [4, 9]
-    ];
+    var edges = [[0, 5], [0, 7], [1, 5], [2, 6], [2, 8], [3, 9], [4, 9]];
     d3.select("#Q").remove();
     this.svgQ = d3
       .select("div.BipartiteQ")
@@ -94,4 +85,4 @@ export class BipartiteQ1 extends Component {
   }
 }
 
-export default mapStateToProps(BipartiteQ1);
+export default mapStateToProps(BipartiteQ3);

@@ -3,20 +3,37 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import { Col, Grid, Row } from "react-bootstrap";
 
+import Page1 from "./NetworkFlowHtml/About.html";
+import Page2 from "./NetworkFlowHtml/Types.html";
+
+var About = { __html: Page1 };
+var Types = { __html: Page2 };
+
 const mapStateToProps = connect(state => {
   return state;
 });
 
-export class NetworkFlowHome extends Component {
+export class ComputGeometryHome extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
       <div>
-        <p>Network Flow</p>
+        <Grid>
+          <Row>
+            <Col>
+              <div className="content" dangerouslySetInnerHTML={About} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="content" dangerouslySetInnerHTML={Types} />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
-export default mapStateToProps(withRouter(NetworkFlowHome));
+export default mapStateToProps(withRouter(ComputGeometryHome));

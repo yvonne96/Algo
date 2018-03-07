@@ -13,6 +13,9 @@ import Page4 from "./BipartiteMatching/bipartiteMatchingHtml/code.html";
 import Page5 from "./BipartiteMatching/bipartiteMatchingHtml/Useful.html";
 
 import BipartiteQ1 from "./BipartiteMatching/BipartiteQuestions/BipartiteQ1";
+import BipartiteQ2 from "./BipartiteMatching/BipartiteQuestions/BipartiteQ2";
+import BipartiteQ3 from "./BipartiteMatching/BipartiteQuestions/BipartiteQ3";
+import BipartiteQ4 from "./BipartiteMatching/BipartiteQuestions/BipartiteQ4";
 
 var About = { __html: Page1 };
 var Facts = { __html: Page2 };
@@ -81,9 +84,9 @@ class BipartiteMatching extends Component {
                 )}
                 <br />
                 {this.question == 0 && <BipartiteQ1 className="Questions" />}
-                {this.question == 1 && <BipartiteQ1 className="Questions" />}
-                {this.question == 2 && <BipartiteQ1 className="Questions" />}
-                {this.question == 3 && <BipartiteQ1 className="Questions" />}
+                {this.question == 1 && <BipartiteQ2 className="Questions" />}
+                {this.question == 2 && <BipartiteQ3 className="Questions" />}
+                {this.question == 3 && <BipartiteQ4 className="Questions" />}
                 <br />
               </div>
             </Col>
