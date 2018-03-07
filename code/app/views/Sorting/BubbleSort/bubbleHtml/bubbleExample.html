@@ -1,22 +1,16 @@
 <h2>Step by Step Example</h2>
-<p>Let us take the array of numbers "5 1 4 2 8",
-    and sort the array from lowest number to greatest number using bubble sort.
-    In each step, elements written in bold are being compared.
-    Three passes will be required.</p>
+<br/>
+<p>Let us take the array of numbers "4 7 1 3",</p>
 <p><b>First Pass:</b></p>
-<p>( 5 1 4 2 8 ) -> ( 1 5 4 2 8 ),
-    Here, algorithm compares the first two elements, and swaps since 5 > 1.</p>
-<p>( 1 5 4 2 8 ) -> ( 1 4 5 2 8 ), Swap since 5 > 4</p>
-<p>( 1 4 5 2 8 ) -> ( 1 4 2 5 8 ), Swap since 5 > 2</p>
-<p>( 1 4 2 5 8 ) -> ( 1 4 2 5 8 ),
-    Now, since these elements are already in order (8 > 5),
-    algorithm does not swap them.</p>
-<p>( 1 4 2 5 8 ) -> ( 1 4 2 5 8 ),
-    Now, since these elements are already in order (8 > 5), algorithm does not swap them.</p>
+<p>( <i style="color: darkred">4</i> 7 1 3) -> ( 4 7 1 3 ),
+    since 4 < 7, nothing changes</p>
+<p>( 4 <i style="color: darkred">7</i> 1 3 ) -> ( 4 1 7 3 ), since 7 > 1 swap</p>
+<p>( 4 1 <i style="color: darkred">7</i> 3 ) -> ( 4 1 3 7 ), since 7 > 3 swap</p>
+
 <p><b>Second Pass:</b></p>
-<p>( 1 4 2 5 8 ) ->  ( 1 4 2 5 8 )</p>
-<p>( 1 4 2 5 8 ) ->  ( 1 2 4 5 8 ), Swap since 4 > 2</p>
-<p>(1 2 4 5 8 ) ->  ( 1 2 4 5 8 )</p>
-<p>Now, the array is already sorted, but the algorithm does not know if it is completed.
-    The algorithm needs one whole pass without any swap to know it is sorted.
+<p>( <i style="color: darkred">4</i> 1 3 7 ) ->  ( 1 4 3 7), since 4 > 1 swap </p>
+<p>( 1 <i style="color: darkred">4</i> 3 7 ) ->  ( 1 3 4 7 ), since 4 > 3</p>
+<p>
+    list is now sorted but bubble sort will keep running until there as no swaps which
+    will be the third pass.
 </p>

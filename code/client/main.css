@@ -96,21 +96,6 @@ input[type="text"] {
   margin: 0;
 }
 
-.featureList {
-  font-size: 20px;
-  display: list-item;
-  list-style-type: circle;
-  line-height: 250%;
-  text-indent: 20px;
-  list-style-position: inside;
-}
-
-.aboutList {
-  font-size: 20px;
-  line-height: 250%;
-  text-indent: 20px;
-  list-style-position: inside;
-}
 .codeStyle {
   font-size: 15px;
   text-indent: 15px;

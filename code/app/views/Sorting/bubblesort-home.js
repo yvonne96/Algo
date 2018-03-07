@@ -57,13 +57,13 @@ export class BubbleSortHome extends Component {
           </Row>
           <Row>
             <Col md={7}>
-              <div className="content" dangerouslySetInnerHTML={Optimize} />
+              <div className="content" dangerouslySetInnerHTML={Example} />
             </Col>
             <Col md={5}>
               <div className="content" dangerouslySetInnerHTML={Useful} />
             </Col>
             <Col md={5}>
-              <div className="content" dangerouslySetInnerHTML={Example} />
+              <div className="content" dangerouslySetInnerHTML={Optimize} />
             </Col>
           </Row>
           <Row>
