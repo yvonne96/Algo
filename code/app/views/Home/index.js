@@ -29,14 +29,14 @@ export class Home extends Component {
       <div className="Home">
         <Grid>
           <Row className="show-grid">
-            <Col md={8}>
+            <Col md={6}>
               <div className="content" dangerouslySetInnerHTML={About} />
               <div
                 className="content"
                 dangerouslySetInnerHTML={algoImportance}
               />
             </Col>
-            <Col md={4}>
+            <Col md={6}>
               <div className="content" dangerouslySetInnerHTML={features} />
             </Col>
           </Row>
