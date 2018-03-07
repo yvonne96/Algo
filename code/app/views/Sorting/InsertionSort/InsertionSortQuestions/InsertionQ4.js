@@ -11,7 +11,7 @@ export class InsertionQ4 extends Component {
   constructor(props) {
     super(props);
     this.height = 70;
-    this.width = 600;
+    this.width = 500;
     this.numbers = [];
     this.checked = false;
     this.correct = false;

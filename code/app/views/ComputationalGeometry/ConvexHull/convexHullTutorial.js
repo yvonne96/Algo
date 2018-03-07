@@ -19,21 +19,25 @@ export class ConvexTutorial extends Component {
       },
       programState: [
         {
-          text: <p>points = sorted(points)</p>,
+          text: <p style={{ marginLeft: 10 }}>points = sorted(points)</p>,
           command: () => {
             this.sortnums();
           },
           active: false
         },
         {
-          text: <p>upperHull = [points[1], points[0]]</p>,
+          text: (
+            <p style={{ marginLeft: 10 }}>upperHull = [points[1], points[0]]</p>
+          ),
           command: () => {
             this.assignHull(1, "upper");
           },
           active: false
         },
         {
-          text: <p>for i in range(2, len(points)):</p>,
+          text: (
+            <p style={{ marginLeft: 10 }}>for i in range(2, len(points)):</p>
+          ),
           command: () => {
             this.checkForLoopUpperHull();
           },
@@ -41,7 +45,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 30 }}>upperHull.insert(0, points[i])</p>
+            <p style={{ marginLeft: 40 }}>upperHull.insert(0, points[i])</p>
           ),
           command: () => {
             this.pushNewLine(3, "upperHull");
@@ -50,7 +54,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 30 }}>
+            <p style={{ marginLeft: 40 }}>
               while len(upperHull) > 2 and not clockwise(upperHull[:3]):
             </p>
           ),
@@ -61,7 +65,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 60 }}>upperHull.remove(upperHull[1])</p>
+            <p style={{ marginLeft: 70 }}>upperHull.remove(upperHull[1])</p>
           ),
           command: () => {
             this.colorPreviousLines(5);
@@ -75,14 +79,22 @@ export class ConvexTutorial extends Component {
           active: false
         },
         {
-          text: <p>lowerHull = [points[-2], points[-1]]</p>,
+          text: (
+            <p style={{ marginLeft: 10 }}>
+              lowerHull = [points[-2], points[-1]]
+            </p>
+          ),
           command: () => {
             this.assignHull(7, "lower");
           },
           active: false
         },
         {
-          text: <p>for i in range(len(points) - 2, -1, -1):</p>,
+          text: (
+            <p style={{ marginLeft: 10 }}>
+              for i in range(len(points) - 2, -1, -1):
+            </p>
+          ),
           command: () => {
             this.checkForLoopLowerHull();
           },
@@ -90,7 +102,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 30 }}>lowerHull.insert(0, points[i])</p>
+            <p style={{ marginLeft: 40 }}>lowerHull.insert(0, points[i])</p>
           ),
           command: () => {
             this.pushNewLine(9, "lowerHull");
@@ -99,7 +111,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 30 }}>
+            <p style={{ marginLeft: 40 }}>
               while len(lowerHull) > 2 and not clockwise(lowerHull[:3]):
             </p>
           ),
@@ -110,7 +122,7 @@ export class ConvexTutorial extends Component {
         },
         {
           text: (
-            <p style={{ marginLeft: 60 }}>lowerHull.remove(lowerHull[1])</p>
+            <p style={{ marginLeft: 70 }}>lowerHull.remove(lowerHull[1])</p>
           ),
           command: () => {
             this.colorPreviousLines(11);
