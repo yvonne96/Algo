@@ -62,14 +62,24 @@ to run our animations with the code. An admin can add more algorithms and then a
 (images/ContextDiagram.png)
 This is to show the boundary of our system and the external entities that interact with it. This gives a clear understanding of the outside influences on our system. We can see the user interacts with the system by inputing data for the algorithms. The system will send back a visual animation to the user and the user will have the option to pause, start and step through the algorithm. 
 
-### 3.2 Logical Data Model 
-![Logical Data Model image]
-(images/LDS.png)
+### 3.2 Logical Data Model
+#### LDM for animation
+![Logical Data Model for animation image]
+(images/LDSanimation.png)
+#### LDM for quiz
+![Logical Data Model for quiz image]
+(images/LDSquiz.png)
+
 This diagram shows us the connections between our entities, external and internal.This gives us a clear understanding of how our entities are related to each other.
 
 ### 3.3 Data Flow Diagram
-![Data Flow Diagram image]
+#### DFD for animation
+![Data Flow Diagram for animation image]
 (images/DFDanimation.png)
+#### DFD for quiz
+![Data Flow Diagram for quiz image]
+(images/DFDquiz.png)
+
 This diagram maps out the flow of information in our system. The purpose of drawing out our diagram is to map out our expectation of how and where to the information should be passed.
 
 ### 3.4 System Design

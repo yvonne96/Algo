@@ -10,18 +10,13 @@ describe("Bubble animation, ", () => {
     shallow(<BubbleSortTutorial />);
   });
 
-  it("create button calls createRectangles", () => {
-    const spy = spyOn(BubbleSortTutorial.prototype, "createRectangles");
-    const wrapper = mount(<BubbleSortTutorial />);
-    wrapper.find("#createButton").simulate("click");
-    expect(spy).toHaveBeenCalled();
-  });
-
   it("play button calls startClock", () => {
-    const spy = spyOn(BubbleSortTutorial.prototype, "startClock");
+    const createSpy = spyOn(BubbleSortTutorial.prototype, "createRectangles");
+    const startSpy = spyOn(BubbleSortTutorial.prototype, "startClock");
     const wrapper = mount(<BubbleSortTutorial />);
     wrapper.find("#playButton").simulate("click");
-    expect(spy).toHaveBeenCalled();
+    expect(createSpy).toHaveBeenCalled();
+    expect(startSpy).toHaveBeenCalled();
   });
 
   it("pause button calls stopClock", () => {
