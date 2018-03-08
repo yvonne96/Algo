@@ -4,7 +4,9 @@ test:Algorithm:
         - apt update
         - pip3 install -r requirements.txt
         - python3 -m unittest discover -v
-    
+        - coverage run --source=. -m unittest discover -v
+        - coverage report -m
+
 test:Main:   
     image: node:latest
     cache:
@@ -14,4 +16,3 @@ test:Main:
         - cd code
         - npm install
         - npm test
-        
