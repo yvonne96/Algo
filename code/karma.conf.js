@@ -11,7 +11,6 @@ module.exports = function(config) {
       [testHelperPath]: ["webpack", "sourcemap"]
     },
 
-    // webpack configuration used by karma-webpack
     webpack: {
       devtool: "inline-source-map",
 
@@ -23,13 +22,6 @@ module.exports = function(config) {
       },
       module: {
         loaders: [
-          {
-            exclude: [/\.js$/, /\.(html)$/],
-            loader: "file",
-            query: {
-              name: "static/media/[name].[hash:8].[ext]"
-            }
-          },
           {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -46,15 +38,9 @@ module.exports = function(config) {
           }
         ]
       },
-      // relative path starts out at the src folder when importing modules
       resolve: {
         modules: ["./src", "node_modules"]
       }
-    },
-
-    webpackMiddleware: {
-      // only output webpack error messages
-      stats: "errors-only"
     }
   });
 };

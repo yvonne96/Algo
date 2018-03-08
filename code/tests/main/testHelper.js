@@ -6,4 +6,3 @@ import Adapter from "enzyme-adapter-react-15";
 Enzyme.configure({ adapter: new Adapter() });
 const tests = require.context(".", true, /Spec.js/);
 tests.keys().forEach(tests);
-console.info(`TESTS RAN AT ${new Date().toLocaleTimeString()}`);
