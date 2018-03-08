@@ -17,8 +17,9 @@ Overall we have provided a fun and stress free way of learning algorithm's throu
 about the algorithms such as its performance, comparasions of similar algorithms, written example's etc.
 ## System Architecture
 ![System Architecture image]
-(images/systemArch.jpg)
-A user has access to use our system through our website. They 
+(images/systemArch.png)
+A user has access to use our system through our website. They can then interact with our quizzes or our animations. Our website needs access to our algorithms in order
+to run our animations with the code. An admin can add more algorithms and then add subsequent pages to our website so that our users can then see and use these algorithms.
 ## High Level Design
 ## Problems & Resolution
 ### **Problem 1**
