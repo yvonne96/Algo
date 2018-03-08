@@ -3,17 +3,17 @@ import { shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 
-import { Home } from "../../app/views/Home/index";
+import { NetworkFlowHome } from "../../app/views/NetworkFlow/networkFlowHome";
 
-describe("Home Page", () => {
+describe("Network Flow Home Page", () => {
   it("renders", () => {
-    shallow(<Home />);
+    shallow(<NetworkFlowHome />);
   });
 
   describe("html page render", () => {
     let home, node;
     beforeEach(() => {
-      home = renderIntoDocument(<Home />);
+      home = renderIntoDocument(<NetworkFlowHome />);
       node = findDOMNode(home);
     });
 
@@ -21,12 +21,8 @@ describe("Home Page", () => {
       expect(node.textContent).toContain("Home");
     });
 
-    it("AlgorithmImportance html page", () => {
-      expect(node.textContent).toContain("Why are algorithms important?");
-    });
-
-    it("Features html page", () => {
-      expect(node.textContent).toContain("Features");
+    it("Type html page", () => {
+      expect(node.textContent).toContain("Types");
     });
   });
 });

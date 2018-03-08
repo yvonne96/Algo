@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 

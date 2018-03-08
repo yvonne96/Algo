@@ -1,7 +1,5 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { renderIntoDocument } from "react-addons-test-utils";
-import { findDOMNode } from "react-dom";
 
 import { ConvexTutorial } from "../../app/views/ComputationalGeometry/ConvexHull/convexHullTutorial";
 import { ConvexQ1 } from "../../app/views/ComputationalGeometry/ConvexHull/ConvexHullQuestions/ConvexQ1";

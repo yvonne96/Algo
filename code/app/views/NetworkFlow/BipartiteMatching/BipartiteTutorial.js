@@ -24,6 +24,7 @@ export class BipartiteTutorial extends Component {
     this.height = 400;
     this.width = 1000;
     this.tick = 1000;
+    this.findFlow = this.findFlow.bind(this);
   }
 
   componentDidMount() {

@@ -13,7 +13,7 @@ const mapStateToProps = connect(state => {
   return state;
 });
 
-export class ComputGeometryHome extends Component {
+export class NetworkFlowHome extends Component {
   constructor(props) {
     super(props);
   }
@@ -36,4 +36,4 @@ export class ComputGeometryHome extends Component {
     );
   }
 }
-export default mapStateToProps(withRouter(ComputGeometryHome));
+export default mapStateToProps(withRouter(NetworkFlowHome));

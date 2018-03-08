@@ -1,7 +1,6 @@
 import React from "react";
-//import Page from "react-page-object";
-import { mount, shallow } from "enzyme";
-import TestUtils from "react-addons-test-utils";
+
+import { shallow } from "enzyme";
 import { renderIntoDocument } from "react-addons-test-utils";
 import { findDOMNode } from "react-dom";
 
