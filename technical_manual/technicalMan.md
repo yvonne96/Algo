@@ -9,6 +9,8 @@ One problem that we may have with this animation is that when a user uses the an
 
 Overall we have provided a fun and stress free way of learning algorithm's. We did this by providing animations and quizes for our users. 
 ## System Architecture
+![System Architecture image]
+(images/AlgoArchitecture.jpg)
 ## High Level Design
 ## Problems & Resolution
 ### **Problem 1**
