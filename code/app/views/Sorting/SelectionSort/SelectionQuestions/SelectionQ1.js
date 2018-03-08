@@ -56,6 +56,8 @@ export class SelectionQ1 extends Component {
     this.checked = true;
     if (document.getElementById("answer").value == "6") {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

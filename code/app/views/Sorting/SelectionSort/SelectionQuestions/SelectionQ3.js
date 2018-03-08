@@ -63,6 +63,8 @@ export class SelectionQ3 extends Component {
       (nums[0] == "90" && nums[1] == "34")
     ) {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

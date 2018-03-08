@@ -294,18 +294,10 @@ export class BubbleSortTutorial extends Component {
         </div>
         <br />
         <button
-          id="createButton"
-          className="button createBtn"
-          onClick={() => {
-            this.createRectangles();
-          }}
-        >
-          <Glyphicon glyph="pencil" />
-        </button>
-        <button
           id="playButton"
           className="button playBtn"
           onClick={() => {
+            this.createRectangles();
             this.startClock();
           }}
         >

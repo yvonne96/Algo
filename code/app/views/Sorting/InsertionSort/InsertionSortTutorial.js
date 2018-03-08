@@ -278,7 +278,7 @@ export class InsertionSortTutorial extends Component {
       .duration(this.tick);
     vars.numbers[vars.pos + 1][1]
       .transition()
-      .attr("x", (vars.pos + 1) * 60 + 55)
+      .attr("x", (vars.pos + 1) * 60 + 50)
       .duration(this.tick);
     this.updateQueue([7]);
     this.setState({ vars });
@@ -364,18 +364,10 @@ export class InsertionSortTutorial extends Component {
         </div>
         <br />
         <button
-          id="createBtn"
-          className="button createBtn"
-          onClick={() => {
-            this.createRectangles();
-          }}
-        >
-          <Glyphicon glyph="pencil" />
-        </button>
-        <button
           id="playBtn"
           className="button playBtn"
           onClick={() => {
+            this.createRectangles();
             this.startClock();
           }}
         >

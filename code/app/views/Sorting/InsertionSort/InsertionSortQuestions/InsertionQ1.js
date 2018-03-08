@@ -57,6 +57,8 @@ export class InsertionQ1 extends Component {
     this.checked = true;
     if (document.getElementById("answer").value == "78") {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

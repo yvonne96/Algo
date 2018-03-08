@@ -30,6 +30,8 @@ export class ConvexQ3 extends Component {
     convex.drawHull(this.svgContainerQ, upperHull, lowerHull, this.height);
     if (3 == upperHull.length) {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

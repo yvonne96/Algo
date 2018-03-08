@@ -56,6 +56,8 @@ export class BubbleQ4 extends Component {
     this.checked = true;
     if (document.getElementById("answer").value == "0") {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }
