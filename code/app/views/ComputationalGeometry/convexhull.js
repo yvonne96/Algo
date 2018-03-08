@@ -64,6 +64,8 @@ class ConvexHull extends Component {
           <Row>
             <Col>
               <div className="content button-center">
+                <h2>Questions</h2>
+                <br />
                 {this.question > 0 && (
                   <button
                     className="button fastSlowBtn"
