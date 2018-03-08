@@ -3,7 +3,6 @@ test:Algorithm:
     script:
         - apt update
         - pip3 install coverage
-        - pip3 install -r requirements.txt
         - python3 -m unittest discover -v
         - coverage run --source=. -m unittest discover -v
         - coverage report -m
