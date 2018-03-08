@@ -28,6 +28,8 @@ export class ConvexQ4 extends Component {
     this.checked = true;
     if (document.getElementById("nums").value == "5") {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

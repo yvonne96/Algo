@@ -63,6 +63,8 @@ export class BubbleQ2 extends Component {
       (nums[0] == "12" && nums[1] == "19")
     ) {
       this.correct = true;
+    } else {
+      this.correct = false;
     }
     this.forceUpdate();
   }

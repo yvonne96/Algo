@@ -1,6 +1,32 @@
 # Technical Manual
 ## Table of Contents
-## 1. Introduction
+**1. Introduction**
+* 1.1 Overview
+* 1.2 Glossary
+
+**2. System Architecture**
+**3. High Level Design**
+* 3.1 Context Diagram
+* 3.2 Logical Data Model 
+* 3.3 Data Flow Diagram
+* 3.4 System Design
+
+**4. Challenges and Resolutions**
+* 4.1 Refreshing
+* 4.2 Testing
+* 4.3 Animations
+* 4.4 Framework/JS library
+
+**5. Installation Guide**
+**6. Testing**
+* 6.1 Unit Testing
+* 6.2 Automated User Testing
+* 6.3 Continuous Integration
+* 6.3 User Testing
+* 6.4 Ad Hoc Testing
+
+## Introduction
+### 1.1 Overview
 Our product is a interactive web application that helps students learn about algorithms. It also works as a fun and interesting aid for teachers to use during their classes.
 
 What makes this website stand out is it's visually appealing animations. Once the user provides its own input data for the animation, they can play, pause, fast-forward and slow it down. 
@@ -15,6 +41,16 @@ So to prevent this from happening we also provided a quiz to test our user's kno
 
 Overall we have provided a fun and stress free way of learning algorithm's throuh the use of interactive animations and quizes. We also provided vital information 
 about the algorithms such as its performance, comparasions of similar algorithms, written example's etc.
+
+### 1.2 Glossary
+
+#### GET Request
+Request to retrieve web page
+#### D3
+Javascript library 
+#### React
+Javascript framework
+
 ## 2. System Architecture
 ![System Architecture image]
 (images/sysArch.png)
@@ -55,7 +91,7 @@ This diagram shows the layers of our system.
 ### 4.1 Refreshing
 Any new pages that we added to our application wouldn't refresh. You also couldn't directly type the page path into the browser. You would get a GET request error.
 
-***Solution:***
+***Solution***
 We discovered we had an issue with our routes. The fix was very simple and only required one line of code.
 
 ### 4.2 Testing
@@ -63,7 +99,7 @@ There was some difficulty in setting up jasmine and karma testing.
 1. Couldnt process our html pages
 2. It tried to imported Connect(withRouter(***javascriptClass***)) but it didnt like this since it doesnt want to route the class.
 
-***Solution:***
+***Solution***
 1. Added a html-loader to our webpack configuration underneath karma.conf.js file.
 2. Added "export" infront of our javascript classes that we were testing. Also when we were importing it into our jasmine test file we wrapped the import in curly braces. This tells jasmine to not use the default export so this means that we are just inporting the class.
 
@@ -92,19 +128,25 @@ $ npm install
 $ npm start
 ```
 
-### Step3 
+### Step 3 
 The website will now be visible at https://localhost:3000
 
 ## 6. Testing
 
 ### 6.1 Continuous Integration
-From the very start of our project we implemented continuous integration testing with gitlab. We had continuous integration running on our python files. We felt this was very important as we never actually run the python files but these contain the code which we show the users on the website. By having continuous integration this meant that each time any code was uploaded to the repo these tests were ran. If any change was made that then made these tests fail we would have a very good idea what was causing it as it would have happened in the last change. 
+During our project we created unit tests to test our Python files. We felt this was very important as we never actually run the Python files but these contain the code which we show the users on the website. This means that we would never be showing users incorrect data.
+
+### 6.2 Automated User Testing
+Throughout our project we decided to implement automated user testing. We decided to implement this in Jasmine. This allowed us run tests as if a user was using the system and make sure everything was running okay. 
+
+### 6.3 Continuous Integration 
+From the very start of our project we implemented continuous integration testing with gitlab. We had continuous integration running on our python files.By having continuous integration this meant that each time any code was uploaded to the repo these tests were ran. If any change was made that then made these tests fail we would have a very good idea what was causing it as it would have happened in the last change. Towards the end of our project we decided to add the Jasmine tests to the Continuous Integration to make sure our Javascript continued to behave as it was meant to.
 ![Continuous Integration image]
 (images/continuous_integration.png)
 In this image we can see the Python unit tests running with the continuous integration.
 
-### 6.2 Automated User Testing
-Throughout our project we decided to implement automated user testing. We decided to implement this in Jasmine. This allowed us run tests as if a user was using the system and make sure everything was running okay. We later decided to add these to our continuous integration in order to make sure our website continued to behave as required. 
-
 ### 6.3 User Testing
 Throughout our project we ran user testing by asking friends and family to test out the project. This proved very useful as it helped us find many bugs that we were not previously aware of. For example one user found that clicking the buttons of the animation in the wrong order would cause errors in the animation. It also proved very useful as we discovered how people other than us would interact with the website. For example one issue that kept popping up over and over was after inputing data users would press the play button straight away. (There used to be a requirement to press the draw button first). We realised we should remove this function and just have a play button as it seemed a lot more intuitive. 
+
+### 6.4 Ad Hoc Testing
+During our project we ran into code errors and bugs throughout every stage of the implementation. To help with this we conducted a lot of ad hoc testing. This would have consisted of many different approaches the main one being using the console in the web interface to print out different elements of our code to see how it was behaving at different points of the program. This helped us find the issue and fix the bug. Another approach was to physically use the algorithm as if we were the user. We did this many times to find different bugs and issues with our code.

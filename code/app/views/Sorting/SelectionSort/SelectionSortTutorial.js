@@ -326,18 +326,10 @@ export class SelectionSortTutorial extends Component {
         </div>
         <br />
         <button
-          id="createBtn"
-          className="button createBtn"
-          onClick={() => {
-            this.createRectangles();
-          }}
-        >
-          <Glyphicon glyph="pencil" />
-        </button>
-        <button
           id="playBtn"
           className="button playBtn"
           onClick={() => {
+            this.createRectangles();
             this.startClock();
           }}
         >
