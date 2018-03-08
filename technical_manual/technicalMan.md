@@ -3,11 +3,18 @@
 ## Introduction
 Our product is a interactive web application that helps students learn about algorithms. It also works as a fun and interesting aid for teachers to use during their classes.
 
-What makes this website stand out is it visually appealing animations. Once the user provides its own test case for the animation, they can play, pause, fast-forward and slow it down. Another feature of the animation is that the algorithm's code, that is being used by the animation, is displayed beside it. Once the user starts the animation, the line of code that is being represented in the animation is highlighted.These functionality's allow the user to have control over the animations and to be more engaged with it. The reason why we wanted to add an animation to our website is because it is an interesting way to actual see how the input data for the algorithm is processed and modified. It is also proven that we learn faster through images and diagrams.
+What makes this website stand out is it visually appealing animations. Once the user provides its own input data for the animation, they can play, pause, fast-forward and slow it down. 
+Another feature of the animation is that the algorithm's code (used by the animation) is displayed beside the it. 
+Once the user starts the animation, the line of code that is being represented in the animation is highlighted.These functionality's allow the user to have control
+over the animations and to be more engaged with it.The reason why we wanted to add an animation to our website is because it is an interesting way to actual see 
+how the input data for the algorithm is processed and modified. It is also proven that we learn faster through the use of images and diagrams.
 
-One problem that we may have with this animation is that when a user uses the animation they may become unfocused while watching it or they might only understand it during the time that the animation is running. This would hinder our main aim to educate our users. So to prevent this from happening we also provided a quiz to test our user's knowledge.
+One problem that we may have with this animation is that when a user uses the animation they may become unfocused while watching it or they might only 
+understand it during the time that the animation is running. This would hinder our main aim to educate our users. 
+So to prevent this from happening we also provided a quiz to test our user's knowledge.
 
-Overall we have provided a fun and stress free way of learning algorithm's. We did this by providing animations and quizes for our users. 
+Overall we have provided a fun and stress free way of learning algorithm's throuh the use of interactive animations and quizes. We also provided vital information 
+about the algorithms such as its performance, comparasions of similar algorithms, written example's etc.
 ## System Architecture
 ![System Architecture image]
 (images/AlgoArchitecture.jpg)
