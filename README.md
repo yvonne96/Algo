@@ -1,4 +1,4 @@
-#Algo
+# Algo
 
 [![pipeline status](https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo3/badges/master/pipeline.svg)](https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo3/commits/master)
 [![coverage report](https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo3/badges/master/coverage.svg)](https://gitlab.computing.dcu.ie/godwinc3/2018-CA326-cgodwin-algo3/commits/master)
