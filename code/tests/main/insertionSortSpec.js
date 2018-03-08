@@ -8,18 +8,16 @@ describe("Insertion Sort animation, ", () => {
     shallow(<InsertionSortTutorial />);
   });
 
-  it("create button calls createRectangles", () => {
-    const spy = spyOn(InsertionSortTutorial.prototype, "createRectangles");
-    const wrapper = mount(<InsertionSortTutorial />);
-    wrapper.find("#createBtn").simulate("click");
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it("play button calls startClock", () => {
-    const spy = spyOn(InsertionSortTutorial.prototype, "startClock");
+  it("play button calls startClock and createRectangles", () => {
+    const createSpy = spyOn(
+      InsertionSortTutorial.prototype,
+      "createRectangles"
+    );
+    const startSpy = spyOn(InsertionSortTutorial.prototype, "startClock");
     const wrapper = mount(<InsertionSortTutorial />);
     wrapper.find("#playBtn").simulate("click");
-    expect(spy).toHaveBeenCalled();
+    expect(createSpy).toHaveBeenCalled();
+    expect(startSpy).toHaveBeenCalled();
   });
 
   it("pause button calls stopClock", () => {

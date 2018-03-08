@@ -9,18 +9,17 @@ describe("Selection Sort animation, ", () => {
   it("renders", () => {
     shallow(<SelectionSortTutorial />);
   });
-  it("create button calls createRectangles", () => {
-    const spy = spyOn(SelectionSortTutorial.prototype, "createRectangles");
-    const wrapper = mount(<SelectionSortTutorial />);
-    wrapper.find("#createBtn").simulate("click");
-    expect(spy).toHaveBeenCalled();
-  });
 
   it("play button calls startClock", () => {
-    const spy = spyOn(SelectionSortTutorial.prototype, "startClock");
+    const createSpy = spyOn(
+      SelectionSortTutorial.prototype,
+      "createRectangles"
+    );
+    const startSpy = spyOn(SelectionSortTutorial.prototype, "startClock");
     const wrapper = mount(<SelectionSortTutorial />);
     wrapper.find("#playBtn").simulate("click");
-    expect(spy).toHaveBeenCalled();
+    expect(createSpy).toHaveBeenCalled();
+    expect(startSpy).toHaveBeenCalled();
   });
 
   it("pause button calls stopClock", () => {
