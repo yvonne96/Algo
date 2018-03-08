@@ -1,9 +1,17 @@
-image: python
-
-before_script:
-  - apt update
-  - pip3 install -r requirements.txt
-
-test:
-  script:
-    - python3 -m unittest discover -v
+test:Algorithm:
+    image: python
+    script:
+        - apt update
+        - pip3 install -r requirements.txt
+        - python3 -m unittest discover -v
+    
+test:Main:   
+    image: node:latest
+    cache:
+      paths:
+        - node_modules/
+    script:
+        - cd code
+        - npm install
+        - npm test
+        
