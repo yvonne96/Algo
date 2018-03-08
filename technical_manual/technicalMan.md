@@ -17,7 +17,8 @@ Overall we have provided a fun and stress free way of learning algorithm's throu
 about the algorithms such as its performance, comparasions of similar algorithms, written example's etc.
 ## System Architecture
 ![System Architecture image]
-(images/AlgoArchitecture.jpg)
+(images/systemArch.jpg)
+A user has access to use our system through our website. They 
 ## High Level Design
 ## Problems & Resolution
 ### **Problem 1**
