@@ -12,10 +12,12 @@ import ConvexTutorial from "./ConvexHull/convexHullTutorial";
 import Page1 from "./ConvexHull/convexHullHtml/About.html";
 import Page2 from "./ConvexHull/convexHullHtml/Quick Facts.html";
 import Page3 from "./ConvexHull/convexHullHtml/Useful.html";
+import Page4 from "./ConvexHull/convexHullHtml/Code.html";
 
 var About = { __html: Page1 };
 var Facts = { __html: Page2 };
 var Useful = { __html: Page3 };
+var Code = { __html: Page4 };
 
 const mapStateToProps = connect(state => {
   return state;
@@ -52,6 +54,11 @@ class ConvexHull extends Component {
           <Row>
             <Col>
               <div className="content" dangerouslySetInnerHTML={Useful} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="content" dangerouslySetInnerHTML={Code} />
             </Col>
           </Row>
           <Row>
